@@ -1,8 +1,14 @@
 
 # UniPixelPlanet
 ![color:ff69b4](https://img.shields.io/badge/licence-MIT-blue)
-![color:ff69b4](https://img.shields.io/badge/Unity-2020.3.x-red)
+![color:ff69b4](https://img.shields.io/badge/Unity-6000.1.x-red)
 ![color:ff69b4](https://img.shields.io/badge/Unity-URP-green)
+
+# UniPixelPlanet For Package Manager
+
+- Separate scripts into Runtime and Editor assemblies using `.asmdef` files.
+- Enable installation via Git URL in the Unity Package Manager.
+- Refactor to support runtime execution.
 
 # UniPixelPlanet for Sprites
 
