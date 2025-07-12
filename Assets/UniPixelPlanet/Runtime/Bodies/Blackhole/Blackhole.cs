@@ -80,14 +80,14 @@ namespace UniPixelPlanet.Runtime.Bodies.Blackhole
 
         public void UpdateColor()
         {
-            _blackholeMat.SetColor("_Black_color", colorBlack);
-            var tex1 = GradientUtil.GenerateShaderTex(new Color[] { colorHole1, colorHole2 }, _colorTimes);
+            _blackholeMat.SetColor(UniPixelPlanetShaderProps.KeyColorBlack, colorBlack);
+            var tex1 = GradientUtil.GenerateShaderTex(new[] { colorHole1, colorHole2 }, _colorTimes);
         
             _blackholeMat.SetTexture(UniPixelPlanetShaderProps.KeyGradientTex, tex1);
-            gra = GradientUtil.GetGradient(new Color[] { colorRing1, colorRing2, colorRing3, colorRing4, colorRing5 }, _colorTimesRing);
+            gra = GradientUtil.GetGradient(new[] { colorRing1, colorRing2, colorRing3, colorRing4, colorRing5 }, _colorTimesRing);
 
 
-            var tex2 = GradientUtil.GenerateShaderTex(new Color[] { colorRing1, colorRing2, colorRing3, colorRing4, colorRing5 }, _colorTimesRing);
+            var tex2 = GradientUtil.GenerateShaderTex(new[] { colorRing1, colorRing2, colorRing3, colorRing4, colorRing5 }, _colorTimesRing);
 
             _blackholeRingMat.SetTexture(UniPixelPlanetShaderProps.KeyGradientTex, tex2);
         }

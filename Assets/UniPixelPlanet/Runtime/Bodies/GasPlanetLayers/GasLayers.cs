@@ -85,8 +85,8 @@ namespace UniPixelPlanet.Runtime.Bodies.GasPlanetLayers
         public void UpdateColor()
         {
 
-            var tex1 = GradientUtil.GenerateShaderTex(new Color[] { color1, color2, color3 }, _colorTimes);
-            var tex2 = GradientUtil.GenerateShaderTex(new Color[] { colorDark1, colorDark2, colorDark3 }, _colorTimes);
+            var tex1 = GradientUtil.GenerateShaderTex(new[] { color1, color2, color3 }, _colorTimes);
+            var tex2 = GradientUtil.GenerateShaderTex(new[] { colorDark1, colorDark2, colorDark3 }, _colorTimes);
 
             _gasPlanetMat.SetTexture(UniPixelPlanetShaderProps.KeyTextureKeyword1, tex1);
             _gasPlanetMat.SetTexture(UniPixelPlanetShaderProps.KeyTextureKeyword2, tex2);

@@ -77,7 +77,7 @@ namespace UniPixelPlanet.Runtime.Bodies.DryTerran
 
         public void UpdateColor()
         {
-            _landMat.SetTexture(UniPixelPlanetShaderProps.KeyGradientTex, GradientUtil.GenerateShaderTex(new Color[] { colorLand1, colorLand2, colorLand3, colorLand4, colorLand5 }, _colorTimes));
+            _landMat.SetTexture(UniPixelPlanetShaderProps.KeyGradientTex, GradientUtil.GenerateShaderTex(new[] { colorLand1, colorLand2, colorLand3, colorLand4, colorLand5 }, _colorTimes));
         }
 
         public override void Perform()

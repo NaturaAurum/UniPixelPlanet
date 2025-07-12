@@ -120,10 +120,10 @@ namespace UniPixelPlanet.Runtime.Bodies.Stars
         {
             _starBackgroundMat.SetColor(UniPixelPlanetShaderProps.KeyColor1, colorBackground);
             _starMat.SetTexture(UniPixelPlanetShaderProps.KeyGradientTex,
-                GradientUtil.GenerateShaderTex(new Color[] { colorStar1, colorStar2, colorStar3, colorStar4 },
+                GradientUtil.GenerateShaderTex(new[] { colorStar1, colorStar2, colorStar3, colorStar4 },
                     _colorTimesStar));
             _starFlaresMat.SetTexture(UniPixelPlanetShaderProps.KeyGradientTex,
-                GradientUtil.GenerateShaderTex(new Color[] { colorFlare1, colorFlare2 }, _colorTimesStarFlares));
+                GradientUtil.GenerateShaderTex(new[] { colorFlare1, colorFlare2 }, _colorTimesStarFlares));
         }
 
         public override void Perform()

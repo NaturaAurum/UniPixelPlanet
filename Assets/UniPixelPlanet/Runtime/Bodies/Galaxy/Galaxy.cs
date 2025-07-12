@@ -17,7 +17,7 @@ namespace UniPixelPlanet.Runtime.Bodies.Galaxy
 
         Material GalaxyMat;
 
-        private float[] _color_times = new float[] { 0, 0.2f, 0.4f, 0.6f, 0.8f, 1.0f };
+        private float[] _color_times = new[] { 0, 0.2f, 0.4f, 0.6f, 0.8f, 1.0f };
 
         // Start is called before the first frame update
         void Start()
@@ -75,7 +75,7 @@ namespace UniPixelPlanet.Runtime.Bodies.Galaxy
 
         public void UpdateColor()
         {
-            var tex1 = GradientUtil.GenerateShaderTex(new Color[] { Color1, Color2, Color3, Color4, Color5, Color6 }, _color_times);
+            var tex1 = GradientUtil.GenerateShaderTex(new[] { Color1, Color2, Color3, Color4, Color5, Color6 }, _color_times);
             GalaxyMat.SetTexture(UniPixelPlanetShaderProps.KeyGradientTex, tex1);
         }
 
