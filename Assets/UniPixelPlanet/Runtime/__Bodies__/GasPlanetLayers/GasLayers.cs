@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.GasPlanetLayers
+namespace UniPixelPlanet.Runtime.__Bodies__.GasPlanetLayers
 {
     public class GasLayers : CelestialBody {
   

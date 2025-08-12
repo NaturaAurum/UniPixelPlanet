@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.Blackhole
+namespace UniPixelPlanet.Runtime.__Bodies__.Blackhole
 {
     public class Blackhole : CelestialBody
     {

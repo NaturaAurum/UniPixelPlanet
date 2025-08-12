@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.IceWorld
+namespace UniPixelPlanet.Runtime.__Bodies__.IceWorld
 {
     public class IceWorld : CelestialBody {
 

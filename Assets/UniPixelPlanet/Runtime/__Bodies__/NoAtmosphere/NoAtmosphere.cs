@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.NoAtmosphere
+namespace UniPixelPlanet.Runtime.__Bodies__.NoAtmosphere
 {
     public class NoAtmosphere : CelestialBody {
    

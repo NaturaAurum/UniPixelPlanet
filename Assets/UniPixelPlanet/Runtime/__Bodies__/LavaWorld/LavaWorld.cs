@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.LavaWorld
+namespace UniPixelPlanet.Runtime.__Bodies__.LavaWorld
 {
     public class LavaWorld : CelestialBody {
     

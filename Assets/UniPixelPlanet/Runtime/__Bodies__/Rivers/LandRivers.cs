@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.Rivers
+namespace UniPixelPlanet.Runtime.__Bodies__.Rivers
 {
     public class LandRivers : CelestialBody {
     

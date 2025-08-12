@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.Galaxy
+namespace UniPixelPlanet.Runtime.__Bodies__.Galaxy
 {
     public class Galaxy : CelestialBody
     {

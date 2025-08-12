@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.Asteroids
+namespace UniPixelPlanet.Runtime.__Bodies__.Asteroids
 {
     public class Asteroid : CelestialBody {
     
@@ -12,8 +12,15 @@ namespace UniPixelPlanet.Runtime.Bodies.Asteroids
         [SerializeField] private GameObject asteroidSprite;
 
         private Material _asteroidMat;
+        private MaterialPropertyBlock _propBlock;
+        private Renderer _renderer;
     
         private string[] _initColors = {"#a3a7c2", "#4c6885", "#3a3f5e"};
+
+        private void Awake()
+        {
+            
+        }
 
         private void Start()
         {
@@ -24,6 +31,8 @@ namespace UniPixelPlanet.Runtime.Bodies.Asteroids
 
         public override void Initialize()
         {
+            _propBlock = new MaterialPropertyBlock();
+            _renderer = asteroidSprite.GetComponent<Renderer>();
             SetPixel(pixel);
 
             var seedInt = seed.GetHashCode();
@@ -70,9 +79,15 @@ namespace UniPixelPlanet.Runtime.Bodies.Asteroids
 
         public void UpdateColor()
         {
-            _asteroidMat.SetColor(UniPixelPlanetShaderProps.KeyColor1, color1);
-            _asteroidMat.SetColor(UniPixelPlanetShaderProps.KeyColor2, color2);
-            _asteroidMat.SetColor(UniPixelPlanetShaderProps.KeyColor3, color3);
+            // _asteroidMat.SetColor(UniPixelPlanetShaderProps.KeyColor1, color1);
+            // _asteroidMat.SetColor(UniPixelPlanetShaderProps.KeyColor2, color2);
+            // _asteroidMat.SetColor(UniPixelPlanetShaderProps.KeyColor3, color3);
+            
+            _renderer.GetPropertyBlock(_propBlock);
+            _propBlock.SetColor(UniPixelPlanetShaderProps.KeyColor1, color1);
+            _propBlock.SetColor(UniPixelPlanetShaderProps.KeyColor2, color2);
+            _propBlock.SetColor(UniPixelPlanetShaderProps.KeyColor3, color3);
+            _renderer.SetPropertyBlock(_propBlock);
         }
 
         public override void Perform()

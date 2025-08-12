@@ -1,20 +1,15 @@
 Shader "Unlit/Asteroid"
 {
     Properties
-    {
-        _MainTex ("Texture", 2D) = "white" {}
-    	
+    {    	
 	    _Pixels("Pixels", range(10,512)) = 100.0
 	    _Rotation("Rotation",range(0.0, 6.28)) = 0.0
     	_Light_origin("Light origin", Vector) = (0.39,0.39,0.39,0.39)
-	    _Time_speed("Time Speed",range(-1.0, 1.0)) = 0.2
-    	    	
 	    _Color1("Color1", Color) = (1,1,1,1)
     	_Color2("Color2", Color) = (1,1,1,1)
     	_Color3("Color3", Color) = (1,1,1,1)
-    	
 	    _Size("size",float) = 5.294
-	    _OCTAVES("OCTAVES", range(0,20)) = 2
+	    _OCTAVES("Octaves", range(0,20)) = 2
 	    _Seed("seed",range(1, 10)) = 1.567
     	
     }
@@ -32,54 +27,42 @@ Shader "Unlit/Asteroid"
 			ZWrite Off // don't write to depth buffer 
          	Blend SrcAlpha OneMinusSrcAlpha // use alpha blending
 
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
-            #pragma multi_compile_fog
-
-            #include "UnityCG.cginc"
-            #include "../cginc/hlmod.cginc"
+			#include  "../cginc/hlmod.cginc"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             
-            struct appdata
+            struct Attributes
             {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
+                float4 positionOS   : POSITION;
+                float2 uv           : TEXCOORD0;
             };
 
-            struct v2f
+            struct Varyings
             {
-                float2 uv : TEXCOORD0;
-                UNITY_FOG_COORDS(1)
-                float4 vertex : SV_POSITION;
+                float2 uv           : TEXCOORD0;
+                float4 positionHCS  : SV_POSITION;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
-            float _Pixels;
-            float _Rotation;
-			float2 _Light_origin;    	
-			float _Time_speed;
-            float _Light_border_1;
-			float _Light_border_2;
-            float _Size;
-            int _OCTAVES;
-            int _Seed;
-    		fixed4 _Color1;
-            fixed4 _Color2;
-            fixed4 _Color3;
+            CBUFFER_START(UnityPerMaterial)
+                float _Pixels;
+                float _Rotation;
+                float2 _Light_origin;
+                float _Size;
+                int _OCTAVES;
+                float _Seed;
+                half4 _Color1;
+                half4 _Color2;
+                half4 _Color3;
+            CBUFFER_END
             
-			struct Input
-	        {
-	            float2 uv_MainTex;
-	        };
-            v2f vert (appdata v)
+            Varyings vert (Attributes IN)
             {
-                v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                UNITY_TRANSFER_FOG(o,o.vertex);
-                return o;
+                Varyings OUT;
+                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
+                OUT.uv = IN.uv; // No _MainTex_ST transform needed if not using _MainTex
+                return OUT;
             }
 			
 			float rand(float2 coord) {
@@ -87,6 +70,7 @@ Shader "Unlit/Asteroid"
 				return frac(sin(dot(coord.xy ,float2(12.9898,78.233))) * 15.5453 * _Seed);
 			}
 
+			// Perlin-like noise
 			float noise(float2 coord){
 				float2 i = floor(coord);
 				float2 f = frac(coord);
@@ -101,6 +85,7 @@ Shader "Unlit/Asteroid"
 				return lerp(a, b, cubic.x) + (c - a) * cubic.y * (1.0 - cubic.x) + (d - b) * cubic.x * cubic.y;
 			}
 
+			// Fractional Brownian Motion
 			float fbm(float2 coord){
 				float value = 0.0;
 				float scale = 0.5;
@@ -119,7 +104,6 @@ Shader "Unlit/Asteroid"
 
 			float2 rotate(float2 coord, float angle){
 				coord -= 0.5;
-				//coord *= mat2(float2(cos(angle),-sin(angle)),float2(sin(angle),cos(angle)));            	
             	coord = mul(coord,float2x2(float2(cos(angle),-sin(angle)),float2(sin(angle),cos(angle))));
 				return coord + 0.5;
 			}
@@ -142,14 +126,13 @@ Shader "Unlit/Asteroid"
 				return 1.0 - c;
 			}
 
-			fixed4 frag(v2f i) : COLOR {
+			half4 frag(Varyings IN) : SV_Target {
 				// pixelize uv
-            	
-				float2 uv = floor(i.uv*_Pixels)/_Pixels;				
+				float2 uv = floor(IN.uv*_Pixels)/_Pixels;				
 				//uv.y = 1 - uv.y;
 		
 				// we use this val later to interpolate between shades
-				bool dith = dither(uv, i.uv);
+				bool dith = dither(uv, IN.uv);
 				
 				// distance from center
 				float d = distance(uv, float2(0.5,0.5));
@@ -175,7 +158,7 @@ Shader "Unlit/Asteroid"
 
 				// now we just assign colors depending on noise values and crater values
 				// base
-				float3 col = _Color2.rgb;
+				half3 col = _Color2.rgb;
 				
 				// noise
 				if (noise_rel < -0.06 || (noise_rel < -0.04 && dith)) {
@@ -193,10 +176,10 @@ Shader "Unlit/Asteroid"
 					col = _Color3.rgb;
 				}
 				
-				return fixed4(col, n_step);
+				return half4(col, n_step);
 				}
             
-            ENDCG
+            ENDHLSL
         }
     }
 }

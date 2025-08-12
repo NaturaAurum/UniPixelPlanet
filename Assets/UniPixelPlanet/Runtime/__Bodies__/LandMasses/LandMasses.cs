@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.LandMasses
+namespace UniPixelPlanet.Runtime.__Bodies__.LandMasses
 {
     public class LandMasses : CelestialBody {
 

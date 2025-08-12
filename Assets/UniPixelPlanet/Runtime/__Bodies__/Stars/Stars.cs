@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.Stars
+namespace UniPixelPlanet.Runtime.__Bodies__.Stars
 {
     public class Stars : CelestialBody
     {

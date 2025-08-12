@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies.DryTerran
+namespace UniPixelPlanet.Runtime.__Bodies__.DryTerran
 {
     public class DryTerran : CelestialBody {
     
