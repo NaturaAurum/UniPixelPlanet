@@ -13,7 +13,7 @@ namespace UniPixelPlanet.Runtime
 
         public static Color FromRGB(string htmlString)
         {
-            int argb = Int32.Parse(htmlString.Replace("#", ""), NumberStyles.HexNumber);
+            var argb = int.Parse(htmlString.Replace("#", ""), NumberStyles.HexNumber);
             var clr = System.Drawing.Color.FromArgb(argb);
 
 
@@ -23,16 +23,16 @@ namespace UniPixelPlanet.Runtime
 
         public static float GetRandomHueColorByRanges(System.Random rng, int[,] ranges)
         {
-            int randMax = 0;
-            for (int i = 0; i < ranges.GetLength(0); i++)
+            var randMax = 0;
+            for (var i = 0; i < ranges.GetLength(0); i++)
             {
                 randMax += (ranges[i, 1] - ranges[i, 0]);
             }
 
             var r = rng.Next(0, randMax);
 
-            int curPos = 0;
-            for (int i = 0; i < ranges.GetLength(0); i++)
+            var curPos = 0;
+            for (var i = 0; i < ranges.GetLength(0); i++)
             {
                 var curRange = (ranges[i, 1] - ranges[i, 0]);
                 if (r > (curPos + curRange))

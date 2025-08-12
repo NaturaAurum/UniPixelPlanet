@@ -5,29 +5,36 @@ namespace UniPixelPlanet.Runtime.Bodies.Galaxy
     public class Galaxy : CelestialBody
     {
 
-        [SerializeField] Color Color1 = ColorUtil.FromRGB("#ffffeb");
-        [SerializeField] Color Color2 = ColorUtil.FromRGB("#ffe478");
-        [SerializeField] Color Color3 = ColorUtil.FromRGB("#8fde5d");
-        [SerializeField] Color Color4 = ColorUtil.FromRGB("#3d6e70");
-        [SerializeField] Color Color5 = ColorUtil.FromRGB("#323e4f");
-        [SerializeField] Color Color6 = ColorUtil.FromRGB("#322947");
+        [SerializeField]
+        private Color Color1 = ColorUtil.FromRGB("#ffffeb");
+        [SerializeField]
+        private Color Color2 = ColorUtil.FromRGB("#ffe478");
+        [SerializeField]
+        private Color Color3 = ColorUtil.FromRGB("#8fde5d");
+        [SerializeField]
+        private Color Color4 = ColorUtil.FromRGB("#3d6e70");
+        [SerializeField]
+        private Color Color5 = ColorUtil.FromRGB("#323e4f");
+        [SerializeField]
+        private Color Color6 = ColorUtil.FromRGB("#322947");
 
 
-        [SerializeField] GameObject Sprite;
+        [SerializeField]
+        private GameObject Sprite;
 
-        Material GalaxyMat;
+        private Material GalaxyMat;
 
         private float[] _color_times = new[] { 0, 0.2f, 0.4f, 0.6f, 0.8f, 1.0f };
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             GalaxyMat = Sprite.GetComponent<SpriteRenderer>().material;
 
             Initialize();
         }
 
-        void Update()
+        private void Update()
         {
             UpdateTime(Time.time);
         }
