@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniPixelPlanet.Runtime
+namespace UniPixelPlanet.Runtime.__Bodies__
 {
     public abstract class CelestialBody : MonoBehaviour
     {
