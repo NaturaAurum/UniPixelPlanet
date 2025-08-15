@@ -1,6 +1,6 @@
 ﻿namespace UniPixelPlanet.Runtime.Bodies
 {
-    public class CelestialBodyPixelController : CelestialBodyMaterialController
+    public class PlanetPixelController : PlanetMaterialController
     {
         public float pixel = 100;
         

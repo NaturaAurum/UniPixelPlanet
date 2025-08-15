@@ -1,6 +1,6 @@
 ﻿namespace UniPixelPlanet.Runtime.Bodies
 {
-    public class CelestialBodyRotationController : CelestialBodyMaterialController
+    public class PlanetRotationController : PlanetMaterialController
     {
         public float rotation;
         

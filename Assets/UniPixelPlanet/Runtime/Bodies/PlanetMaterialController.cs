@@ -1,54 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UniPixelPlanet.Runtime.Bodies
 {
-    public class CelestialBodyMaterialController : MonoBehaviour
+    public class PlanetMaterialController : MonoBehaviour
     {
         public Renderer targetRenderer;
-        protected MaterialPropertyBlock PropertyBlock;
+        private MaterialPropertyBlock _propertyBlock;
 
         private void Awake()
         {
-            PropertyBlock = new MaterialPropertyBlock();
+            _propertyBlock = new MaterialPropertyBlock();
         }
 
-        protected void Get()
+        private void Get()
         {
-            targetRenderer.GetPropertyBlock(PropertyBlock);
+            targetRenderer.GetPropertyBlock(_propertyBlock);
         }
 
-        protected void Set()
+        private void Set()
         {
-            targetRenderer.SetPropertyBlock(PropertyBlock);
+            targetRenderer.SetPropertyBlock(_propertyBlock);
         }
 
         protected void UpdateFloat(string key, float value)
         {
             Get();
-            PropertyBlock.SetFloat(key, value);
+            _propertyBlock.SetFloat(key, value);
             Set();
         }
 
         protected void UpdateColor(string key, Color color)
         {
             Get();
-            PropertyBlock.SetColor(key, color);
+            _propertyBlock.SetColor(key, color);
             Set();
         }
 
         protected void UpdateVector(string key, Vector2 vector)
         {
             Get();
-            PropertyBlock.SetVector(key, vector);
+            _propertyBlock.SetVector(key, vector);
             Set();
         }
 
         protected void UpdateColor(string key, Color[] colors, float[] times)
         {
             Get();
-            PropertyBlock.SetTexture(key, GradientUtil.GenerateShaderTex(colors, times));
+            _propertyBlock.SetTexture(key, GradientUtil.GenerateShaderTex(colors, times));
             Set();
         }
     }

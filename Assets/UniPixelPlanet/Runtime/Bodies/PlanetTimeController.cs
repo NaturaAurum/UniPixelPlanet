@@ -2,7 +2,7 @@
 
 namespace UniPixelPlanet.Runtime.Bodies
 {
-    public class CelestialBodyTimeController : CelestialBodyMaterialController
+    public class PlanetTimeController : PlanetMaterialController
     {
         public float timeScale = 1;
         

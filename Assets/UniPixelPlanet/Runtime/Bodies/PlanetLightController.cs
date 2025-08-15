@@ -2,7 +2,7 @@
 
 namespace UniPixelPlanet.Runtime.Bodies
 {
-    public class CelestialBodyLightController : CelestialBodyMaterialController
+    public class PlanetLightController : PlanetMaterialController
     {
         public Vector2 lightOrigin;
         

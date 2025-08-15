@@ -1,6 +1,6 @@
 ﻿namespace UniPixelPlanet.Runtime.Bodies
 {
-    public class CelestialBodySeedController : CelestialBodyMaterialController
+    public class PlanetSeedController : PlanetMaterialController
     {
         public string seedString = "seed";
 

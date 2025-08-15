@@ -11,7 +11,7 @@ namespace UniPixelPlanet.Runtime.Bodies
         public Color color;
     }
     
-    public class CelestialBodyColorController : MonoBehaviour
+    public class PlanetColorController : MonoBehaviour
     {
         public List<ColorData> colors;
         

@@ -2,7 +2,7 @@
 
 namespace UniPixelPlanet.Runtime.Bodies
 {
-    public class CelestialBodyGradiantColorController : CelestialBodyMaterialController
+    public class PlanetGradiantColorController : PlanetMaterialController
     {
         public float[] colorTimes;
         public Color[] colors;
