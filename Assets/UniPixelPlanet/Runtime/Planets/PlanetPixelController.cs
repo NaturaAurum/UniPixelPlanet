@@ -1,4 +1,4 @@
-﻿namespace UniPixelPlanet.Runtime.Bodies
+﻿namespace UniPixelPlanet.Runtime.Planets
 {
     public class PlanetPixelController : PlanetMaterialController
     {

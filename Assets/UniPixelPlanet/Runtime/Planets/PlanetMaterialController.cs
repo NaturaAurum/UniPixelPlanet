@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies
+namespace UniPixelPlanet.Runtime.Planets
 {
     public class PlanetMaterialController : MonoBehaviour
     {

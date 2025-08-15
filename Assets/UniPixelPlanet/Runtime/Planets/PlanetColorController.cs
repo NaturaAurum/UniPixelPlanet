@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UniPixelPlanet.Runtime.Bodies
+namespace UniPixelPlanet.Runtime.Planets
 {
     [Serializable]
     public struct ColorData
