@@ -30,6 +30,8 @@
 
         public const string KeyColorBlack = "_BlackColor";
         public const string KeyRadius = "_Radius";
-        public const string KeyLightWidth = "_LightWidth";
+        public const string KeyLightWidth = "_Light_width";
+        public const string KeySize = "_Size";
+        public const string KeyOctaves = "_OCTAVES";
     }
 }

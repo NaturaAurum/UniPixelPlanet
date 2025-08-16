@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 227750754737796271}
   - component: {fileID: 227750754737796272}
   - component: {fileID: 8633034987699943646}
-  - component: {fileID: 2540424015905419573}
   - component: {fileID: 4916145664666268030}
-  - component: {fileID: 5681884214282365729}
+  - component: {fileID: 1442356256055693825}
+  - component: {fileID: 121363138777481481}
   m_Layer: 0
   m_Name: AsteroidSprite
   m_TagString: Untagged
@@ -104,19 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seedString: Seed
---- !u!114 &2540424015905419573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227750754737796273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f0ed7df40149b4b9029b12656f06e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pixel: 100
 --- !u!114 &4916145664666268030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +123,7 @@ MonoBehaviour:
     color: {r: 0.29803923, g: 0.40784314, b: 0.52156866, a: 1}
   - propName: _Color3
     color: {r: 0.22745098, g: 0.24705882, b: 0.36862746, a: 1}
---- !u!114 &5681884214282365729
+--- !u!114 &1442356256055693825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,10 +132,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 227750754737796273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcfa8a5451cb46a099f613e47f2ee3dd, type: 3}
+  m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotation: 0
+  list:
+  - propName: _Light_origin
+    value: {x: 0.7, y: 0.25, z: 0, w: 0}
+--- !u!114 &121363138777481481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227750754737796273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+  - propName: _Pixels
+    value: 100
+  - propName: _Rotation
+    value: 0
+  - propName: _Size
+    value: 6.5
+  - propName: _OCTAVES
+    value: 3.45
 --- !u!1 &227750754771811153
 GameObject:
   m_ObjectHideFlags: 0

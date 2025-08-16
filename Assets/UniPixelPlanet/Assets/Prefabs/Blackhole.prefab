@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1760490342421659508}
   - component: {fileID: 1760490342421659511}
-  - component: {fileID: 7862287152167850704}
   - component: {fileID: 141505185280115074}
   - component: {fileID: 5821349657822465520}
   - component: {fileID: 8595877172430609540}
   - component: {fileID: 8681909875078010284}
+  - component: {fileID: 5849115097103679937}
   m_Layer: 0
   m_Name: Blackhole
   m_TagString: Untagged
@@ -92,19 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7862287152167850704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760490342421659509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f0ed7df40149b4b9029b12656f06e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pixel: 100
 --- !u!114 &141505185280115074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +151,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeScale: 0.5
+--- !u!114 &5849115097103679937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342421659509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+  - propName: _Pixels
+    value: 100
+  - propName: _Rotation
+    value: 0
+  - propName: _Radius
+    value: 0.5
+  - propName: _LightWidth
+    value: 0.05
+  - propName: _LightWidth
+    value: 0.05
 --- !u!1 &1760490342730632095
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,10 +184,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1760490342730632094}
   - component: {fileID: 1760490342730632081}
-  - component: {fileID: 5763820902999692944}
   - component: {fileID: 7109215028102813707}
   - component: {fileID: 8903685183317002100}
   - component: {fileID: 6181011444804884893}
+  - component: {fileID: 5353133772046289925}
   m_Layer: 0
   m_Name: BlackholeRing
   m_TagString: Untagged
@@ -255,19 +265,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5763820902999692944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760490342730632095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f0ed7df40149b4b9029b12656f06e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pixel: 300
 --- !u!114 &7109215028102813707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +315,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeScale: 0.5
+--- !u!114 &5353133772046289925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342730632095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+  - propName: _Pixels
+    value: 300
 --- !u!1 &1760490343617969461
 GameObject:
   m_ObjectHideFlags: 0
