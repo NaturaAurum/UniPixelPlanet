@@ -147,9 +147,9 @@ Shader "Unlit/IcePlanetUnder"
 				return coord + 0.5;
 			}
 
-			fixed4 frag(v2f i) : COLOR {
+			float4 frag(v2f i) : COLOR {
 				// pixelize uv
-            	
+	            	
 				float2 uv = floor(i.uv*_Pixels)/_Pixels;
 				//uv.y = 1 - uv.y;
 
@@ -171,7 +171,7 @@ Shader "Unlit/IcePlanetUnder"
 				
 				// _Size of edge in which colors should be dithered
 				float dither_border = (1.0/_Pixels)*_Dither_Size;
-
+			
 				// now we can assign colors based on distance to light origin
 				float3 col = _Color1.rgb;
 				if (d_light > light_border_1) {
@@ -187,10 +187,10 @@ Shader "Unlit/IcePlanetUnder"
 					}
 				}
 				
-				return fixed4(col, a);
+				return float4(col, a);
 				}
-            
-            ENDCG
+			
+			ENDHLSL
         }
     }
 }

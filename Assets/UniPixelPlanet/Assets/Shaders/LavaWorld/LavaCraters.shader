@@ -33,14 +33,24 @@ Shader "Unlit/LavaCraters"
 			ZWrite Off // don't write to depth buffer 
          	Blend SrcAlpha OneMinusSrcAlpha // use alpha blending
         	
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
             #pragma multi_compile_fog
 
-            #include "UnityCG.cginc"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "../cginc/hlmod.cginc"
+            
+            // Compatibility macros to preserve legacy code structure (do not remove unused parts)
+            #ifndef UNITY_FOG_COORDS
+            #define UNITY_FOG_COORDS(idx)
+            #endif
+            #ifndef UNITY_TRANSFER_FOG
+            #define UNITY_TRANSFER_FOG(o,v)
+            #endif
+            #ifndef TRANSFORM_TEX_URP
+            #define TRANSFORM_TEX_URP(uv, st) ((uv) * (st).xy + (st).zw)
+            #endif
             
             struct appdata
             {
@@ -55,7 +65,8 @@ Shader "Unlit/LavaCraters"
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
             float4 _MainTex_ST;
             float _Pixels;
             float _Rotation;
@@ -65,8 +76,8 @@ Shader "Unlit/LavaCraters"
             float _Size;
             int _Seed;
 			float time;
-    		fixed4 _Color1;
-            fixed4 _Color2;
+   			float4 _Color1;
+            float4 _Color2;
                         
 			struct Input
 	        {
@@ -75,8 +86,8 @@ Shader "Unlit/LavaCraters"
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.vertex = TransformObjectToHClip(v.vertex);
+                o.uv = TRANSFORM_TEX_URP(v.uv, _MainTex_ST);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
@@ -117,7 +128,7 @@ Shader "Unlit/LavaCraters"
             	coord = mul(coord,float2x2(float2(cos(angle),-sin(angle)),float2(sin(angle),cos(angle))));
 				return coord + 0.5;
 			}
-			fixed4 frag(v2f i) : COLOR {
+			float4 frag(v2f i) : COLOR {
 				// pixelize uv
             	
 				float2 uv = floor(i.uv*_Pixels)/_Pixels;				
@@ -146,10 +157,10 @@ Shader "Unlit/LavaCraters"
 
 				// cut out a circle
 				a*= step(d_circle, 0.5);
-				return fixed4(col, a);
+ 			return float4(col, a);
 				}
-            
-            ENDCG
+			
+			ENDHLSL
         }
     }
 }
