@@ -26,22 +26,33 @@ Shader "Unlit/Blackhole"
             ZWrite Off // don't write to depth buffer 
             Blend SrcAlpha OneMinusSrcAlpha // use alpha blending
 
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
             #pragma multi_compile_fog
 
-            #include "UnityCG.cginc"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "../cginc/hlmod.cginc"
 
-            sampler2D _MainTex;
+            // Compatibility macros to preserve legacy code structure (do not remove unused parts)
+            #ifndef UNITY_FOG_COORDS
+            #define UNITY_FOG_COORDS(idx)
+            #endif
+            #ifndef UNITY_TRANSFER_FOG
+            #define UNITY_TRANSFER_FOG(o,v)
+            #endif
+            #ifndef TRANSFORM_TEX_URP
+            #define TRANSFORM_TEX_URP(uv, st) ((uv) * (st).xy + (st).zw)
+            #endif
+
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
             float4 _MainTex_ST;
             float _Pixels;
 
-
-            sampler2D _GradientTex;
-            fixed4 _Black_color;
+            TEXTURE2D(_GradientTex);
+            SAMPLER(sampler_GradientTex);
+            float4 _Black_color;
 
             float _Radius;
             float _Light_width;
@@ -62,13 +73,13 @@ Shader "Unlit/Blackhole"
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.vertex = TransformObjectToHClip(v.vertex);
+                o.uv = TRANSFORM_TEX_URP(v.uv, _MainTex_ST);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
 
-            fixed4 frag (v2f i) : COLOR
+            float4 frag (v2f i) : COLOR
             {
                 float2 uv = floor(i.uv * _Pixels) / _Pixels;
 
@@ -78,12 +89,12 @@ Shader "Unlit/Blackhole"
 
                 if (d_to_center > _Radius - _Light_width) {
                     float col_val = ceil(d_to_center - (_Radius - (_Light_width * 0.5))) * (1.0 / (_Light_width * 0.5));
-                    col = tex2D(_GradientTex, float2(col_val, 0.0)).rgb;
+                    col = SAMPLE_TEXTURE2D(_GradientTex, sampler_GradientTex, float2(col_val, 0.0)).rgb;
                 }
 
-                return fixed4(col, step(d_to_center, _Radius));
+                return float4(col, step(d_to_center, _Radius));
             }
-            ENDCG
+            ENDHLSL
         }
     }
 }

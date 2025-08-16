@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 227750754737796271}
   - component: {fileID: 227750754737796272}
+  - component: {fileID: 8633034987699943646}
+  - component: {fileID: 2540424015905419573}
+  - component: {fileID: 4916145664666268030}
+  - component: {fileID: 5681884214282365729}
   m_Layer: 0
   m_Name: AsteroidSprite
   m_TagString: Untagged
@@ -87,6 +91,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8633034987699943646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227750754737796273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2b1b5c58f84d6492fcb73978a7a309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedString: Seed
+--- !u!114 &2540424015905419573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227750754737796273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f0ed7df40149b4b9029b12656f06e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixel: 100
+--- !u!114 &4916145664666268030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227750754737796273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58f02f22c534fe1a6f0d314a14882f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - propName: _Color1
+    color: {r: 0.6392157, g: 0.654902, b: 0.7607843, a: 1}
+  - propName: _Color2
+    color: {r: 0.29803923, g: 0.40784314, b: 0.52156866, a: 1}
+  - propName: _Color3
+    color: {r: 0.22745098, g: 0.24705882, b: 0.36862746, a: 1}
+--- !u!114 &5681884214282365729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227750754737796273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcfa8a5451cb46a099f613e47f2ee3dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: 0
 --- !u!1 &227750754771811153
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227750754771811151}
-  - component: {fileID: 227750754771811152}
+  - component: {fileID: 145747832208951875}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -120,7 +182,7 @@ Transform:
   - {fileID: 227750754737796271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &227750754771811152
+--- !u!114 &145747832208951875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,14 +191,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 227750754771811153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e859ec1bfbb50642b54bb66a6bd0e2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d03a89962634c359b930fe3ceeff495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: 100
-  seed: Seed
-  calcSeed: 0
-  generateColors: 0
-  color1: {r: 0.6392157, g: 0.654902, b: 0.7607843, a: 1}
-  color2: {r: 0.29803923, g: 0.40784314, b: 0.52156866, a: 1}
-  color3: {r: 0.22745098, g: 0.24705882, b: 0.36862746, a: 1}
-  asteroidSprite: {fileID: 227750754737796273}

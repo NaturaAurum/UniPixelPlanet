@@ -32,15 +32,25 @@ Shader "Unlit/BlackholeRing"
 			ZWrite Off // don't write to depth buffer 
          	Blend SrcAlpha OneMinusSrcAlpha // use alpha blending
         	
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
             #pragma multi_compile_fog
 
-            #include "UnityCG.cginc"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "../cginc/hlmod.cginc"
-            
+
+            // Compatibility macros to preserve legacy code structure (do not remove unused parts)
+            #ifndef UNITY_FOG_COORDS
+            #define UNITY_FOG_COORDS(idx)
+            #endif
+            #ifndef UNITY_TRANSFER_FOG
+            #define UNITY_TRANSFER_FOG(o,v)
+            #endif
+            #ifndef TRANSFORM_TEX_URP
+            #define TRANSFORM_TEX_URP(uv, st) ((uv) * (st).xy + (st).zw)
+            #endif
+
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -54,95 +64,97 @@ Shader "Unlit/BlackholeRing"
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
             float4 _MainTex_ST;
             float _Pixels;
             float _Rotation;
-			float2 _Light_origin;    	
-			float _Time_speed;
+            float2 _Light_origin;
+            float _Time_speed;
             float _Disk_width;
             float _Ring_perspective;
-            bool _should_dither;
+            float _should_dither;
             float _Size;
             int _OCTAVES;
             int _Seed;
-			float time;
-            sampler2D _GradientTex;
-			struct Input
-	        {
-	            float2 uv_MainTex;
-	        };
+            float time;
+            TEXTURE2D(_GradientTex);
+            SAMPLER(sampler_GradientTex);
+            struct Input
+            {
+                float2 uv_MainTex;
+            };
 
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.vertex = TransformObjectToHClip(v.vertex);
+                o.uv = TRANSFORM_TEX_URP(v.uv, _MainTex_ST);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
-			float rand(float2 coord) {
-				coord = mod(coord, float2(2.0,1.0)*round(_Size));
-				return frac(sin(dot(coord.xy ,float2(12.9898,78.233))) * 15.5453 * _Seed);
-			}
+            float rand(float2 coord) {
+                coord = mod(coord, float2(2.0,1.0)*round(_Size));
+                return frac(sin(dot(coord.xy ,float2(12.9898,78.233))) * 15.5453 * _Seed);
+            }
 
-			float noise(float2 coord){
-				float2 i = floor(coord);
-				float2 f = frac(coord);
-				
-				float a = rand(i);
-				float b = rand(i + float2(1.0, 0.0));
-				float c = rand(i + float2(0.0, 1.0));
-				float d = rand(i + float2(1.0, 1.0));
+            float noise(float2 coord){
+                float2 i = floor(coord);
+                float2 f = frac(coord);
+                
+                float a = rand(i);
+                float b = rand(i + float2(1.0, 0.0));
+                float c = rand(i + float2(0.0, 1.0));
+                float d = rand(i + float2(1.0, 1.0));
 
-				float2 cubic = f * f * (3.0 - 2.0 * f);
+                float2 cubic = f * f * (3.0 - 2.0 * f);
 
-				return lerp(a, b, cubic.x) + (c - a) * cubic.y * (1.0 - cubic.x) + (d - b) * cubic.x * cubic.y;
-			}
+                return lerp(a, b, cubic.x) + (c - a) * cubic.y * (1.0 - cubic.x) + (d - b) * cubic.x * cubic.y;
+            }
 
-			float fbm(float2 coord){
-				float value = 0.0;
-				float scale = 0.5;
+            float fbm(float2 coord){
+                float value = 0.0;
+                float scale = 0.5;
 
-				for(int i = 0; i < _OCTAVES ; i++){
-					value += noise(coord) * scale;
-					coord *= 2.0;
-					scale *= 0.5;
-				}
-				return value;
-			}
+                for(int i = 0; i < _OCTAVES ; i++){
+                    value += noise(coord) * scale;
+                    coord *= 2.0;
+                    scale *= 0.5;
+                }
+                return value;
+            }
 
 
-			// by Leukbaars from https://www.shadertoy.com/view/4tK3zR
-			float circleNoise(float2 uv) {
-			    float uv_y = floor(uv.y);
-			    uv.x += uv_y*.31;
-			    float2 f = frac(uv);
-				float h = rand(float2(floor(uv.x),floor(uv_y)));
-			    float m = (length(f-0.25-(h*0.5)));
-			    float r = h*0.25;
-			    return smoothstep(0.0, r, m*0.75);
-			}
+            // by Leukbaars from https://www.shadertoy.com/view/4tK3zR
+            float circleNoise(float2 uv) {
+                float uv_y = floor(uv.y);
+                uv.x += uv_y*.31;
+                float2 f = frac(uv);
+                float h = rand(float2(floor(uv.x),floor(uv_y)));
+                float m = (length(f-0.25-(h*0.5)));
+                float r = h*0.25;
+                return smoothstep(0.0, r, m*0.75);
+            }
 
-			bool dither(float2 uv_pixel, float2 uv_real) {
-				return mod(uv_pixel.x+uv_real.y,2.0/_Pixels) <= 1.0 / _Pixels;
-			}
+            bool dither(float2 uv_pixel, float2 uv_real) {
+                return mod(uv_pixel.x+uv_real.y,2.0/_Pixels) <= 1.0 / _Pixels;
+            }
 
-			float2 spherify(float2 uv) {
-				float2 centered= uv *2.0-1.0;
-				float z = sqrt(1.0 - dot(centered.xy, centered.xy));
-				float2 sphere = centered/(z + 1.0);
-				return sphere * 0.5+0.5;
-			}
+            float2 spherify(float2 uv) {
+                float2 centered= uv *2.0-1.0;
+                float z = sqrt(1.0 - dot(centered.xy, centered.xy));
+                float2 sphere = centered/(z + 1.0);
+                return sphere * 0.5+0.5;
+            }
 
-			float2 rotate(float2 coord, float angle){
-				coord -= 0.5;
-				//coord *= float2x2(float2(cos(angle),-sin(angle)),float2(sin(angle),cos(angle)));
-            	coord = mul(coord,float2x2(float2(cos(angle),-sin(angle)),float2(sin(angle),cos(angle))));
-				return coord + 0.5;
-			}
+            float2 rotate(float2 coord, float angle){
+                coord -= 0.5;
+                //coord *= float2x2(float2(cos(angle),-sin(angle)),float2(sin(angle),cos(angle)));
+                coord = mul(coord,float2x2(float2(cos(angle),-sin(angle)),float2(sin(angle),cos(angle))));
+                return coord + 0.5;
+            }
 
-			fixed4 frag(v2f i) : COLOR {
+            float4 frag(v2f i) : COLOR {
                 float2 uv = floor(i.uv * _Pixels) / _Pixels;
 
                 bool dith = dither(i.uv, uv);
@@ -212,7 +224,7 @@ Shader "Unlit/BlackholeRing"
                 // apply some colors based on final value
                 float posterized = floor((disk + light_d) * 4.0) / 4.0;
                 float3 col;
-                col = tex2D(_GradientTex, float2(posterized, uv.y)).rgb;
+                col = SAMPLE_TEXTURE2D(_GradientTex, sampler_GradientTex, float2(posterized, uv.y)).rgb;
 
                 // this can be toggled on to achieve a more "realistic" blacak hole, with red and blue shifting. This was just me messing around so can probably be more optimized and done cleaner
                 //	col.rgb *= 1.0 - pow(uv.x, 1.0);
@@ -222,10 +234,10 @@ Shader "Unlit/BlackholeRing"
                 //	col.rgb *= pow(uv.x, 0.15);
 
                 float disk_a = step(0.15, disk);
-                return fixed4(col, disk_a);
-			}
+                return float4(col, disk_a);
+            }
             
-            ENDCG
+            ENDHLSL
         }
     }
 }

@@ -10,6 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1760490342421659508}
   - component: {fileID: 1760490342421659511}
+  - component: {fileID: 7862287152167850704}
+  - component: {fileID: 141505185280115074}
+  - component: {fileID: 5821349657822465520}
+  - component: {fileID: 8595877172430609540}
+  - component: {fileID: 8681909875078010284}
   m_Layer: 0
   m_Name: Blackhole
   m_TagString: Untagged
@@ -87,6 +92,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7862287152167850704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342421659509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f0ed7df40149b4b9029b12656f06e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixel: 100
+--- !u!114 &141505185280115074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342421659509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2b1b5c58f84d6492fcb73978a7a309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedString: seed
+--- !u!114 &5821349657822465520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342421659509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58f02f22c534fe1a6f0d314a14882f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - propName: _BlackColor
+    color: {r: 0.15294118, g: 0.15294118, b: 0.21176471, a: 1}
+--- !u!114 &8595877172430609540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342421659509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d754d87f2541efbecc40e2c2cd2013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorTimes:
+  - 0
+  - 1
+  colors:
+  - {r: 1, g: 1, b: 0.92156863, a: 1}
+  - {r: 0.92941177, g: 0.48235294, b: 0.22352941, a: 1}
+--- !u!114 &8681909875078010284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342421659509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8aed1a48e4babb83f8e55ffd6648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 0.5
 --- !u!1 &1760490342730632095
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +174,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1760490342730632094}
   - component: {fileID: 1760490342730632081}
+  - component: {fileID: 5763820902999692944}
+  - component: {fileID: 7109215028102813707}
+  - component: {fileID: 8903685183317002100}
+  - component: {fileID: 6181011444804884893}
   m_Layer: 0
   m_Name: BlackholeRing
   m_TagString: Untagged
@@ -174,6 +255,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5763820902999692944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342730632095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f0ed7df40149b4b9029b12656f06e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixel: 300
+--- !u!114 &7109215028102813707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342730632095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2b1b5c58f84d6492fcb73978a7a309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedString: seed
+--- !u!114 &8903685183317002100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342730632095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d754d87f2541efbecc40e2c2cd2013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorTimes:
+  - 0
+  - 0.25
+  - 0.5
+  - 0.75
+  - 0.1
+  colors:
+  - {r: 1, g: 1, b: 0.92156863, a: 1}
+  - {r: 1, g: 0.9607843, b: 0.2509804, a: 1}
+  - {r: 1, g: 0.72156864, b: 0.2901961, a: 1}
+  - {r: 0.92941177, g: 0.48235294, b: 0.22352941, a: 1}
+  - {r: 0.7411765, g: 0.2509804, b: 0.20784314, a: 1}
+--- !u!114 &6181011444804884893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342730632095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8aed1a48e4babb83f8e55ffd6648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 0.5
 --- !u!1 &1760490343617969461
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1760490343617969460}
-  - component: {fileID: 1760490343617969463}
+  - component: {fileID: 4479547772910767189}
   m_Layer: 0
   m_Name: Blackhole
   m_TagString: Untagged
@@ -199,7 +343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760490343617969461}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.32, y: 0.18, z: -1.911565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -208,7 +352,7 @@ Transform:
   - {fileID: 1760490342730632094}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1760490343617969463
+--- !u!114 &4479547772910767189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,50 +361,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1760490343617969461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dbe425ffe7de0242908f57a10829d80, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d03a89962634c359b930fe3ceeff495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: 100
-  seed: Seed
-  calcSeed: 0
-  generateColors: 0
-  blackholeObj: {fileID: 1760490342421659509}
-  blackholeRingObj: {fileID: 1760490342730632095}
-  colorBlack: {r: 0.15294118, g: 0.15294118, b: 0.21176471, a: 1}
-  colorHole1: {r: 1, g: 1, b: 0.92156863, a: 1}
-  colorHole2: {r: 0.92941177, g: 0.48235294, b: 0.22352941, a: 1}
-  colorRing1: {r: 1, g: 1, b: 0.92156863, a: 1}
-  colorRing2: {r: 1, g: 0.9607843, b: 0.2509804, a: 1}
-  colorRing3: {r: 1, g: 0.72156864, b: 0.2901961, a: 1}
-  colorRing4: {r: 0.92941177, g: 0.48235294, b: 0.22352941, a: 1}
-  colorRing5: {r: 0.7411765, g: 0.2509804, b: 0.20784314, a: 1}
-  gra:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
