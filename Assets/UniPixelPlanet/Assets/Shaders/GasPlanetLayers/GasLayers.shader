@@ -36,14 +36,24 @@ Shader "Unlit/GasLayers"
 			ZWrite Off // don't write to depth buffer 
          	Blend SrcAlpha OneMinusSrcAlpha // use alpha blending
         	
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
             #pragma multi_compile_fog
 
-            #include "UnityCG.cginc"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "../cginc/hlmod.cginc"
+            
+            // Compatibility macros to preserve legacy code structure (do not remove unused parts)
+            #ifndef UNITY_FOG_COORDS
+            #define UNITY_FOG_COORDS(idx)
+            #endif
+            #ifndef UNITY_TRANSFER_FOG
+            #define UNITY_TRANSFER_FOG(o,v)
+            #endif
+            #ifndef TRANSFORM_TEX_URP
+            #define TRANSFORM_TEX_URP(uv, st) ((uv) * (st).xy + (st).zw)
+            #endif
             
             struct appdata
             {
@@ -58,24 +68,27 @@ Shader "Unlit/GasLayers"
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
             float4 _MainTex_ST;
             float _Pixels;
             float _Rotation;
-			float2 _Light_origin;    	
-			float _Time_speed;
+            float2 _Light_origin;    
+            float _Time_speed;
             float _Stretch;
             float _Cloud_curve;
             float _Cloud_cover;
             float _Light_border_1;
-			float _Light_border_2;
+            float _Light_border_2;
             float _Bands;
-			sampler2D _ColorScheme;
-            sampler2D _Dark_ColorScheme;
+            TEXTURE2D(_ColorScheme);
+            SAMPLER(sampler_ColorScheme);
+            TEXTURE2D(_Dark_ColorScheme);
+            SAMPLER(sampler_Dark_ColorScheme);
             float _Size;
             int _OCTAVES;
             int _Seed;
-			float time;
+            float time;
             
 			struct Input
 	        {
@@ -84,8 +97,8 @@ Shader "Unlit/GasLayers"
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.vertex = TransformObjectToHClip(v.vertex);
+                o.uv = TRANSFORM_TEX_URP(v.uv, _MainTex_ST);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
@@ -160,7 +173,7 @@ Shader "Unlit/GasLayers"
 				return coord + 0.5;
 			}
 
-			fixed4 frag(v2f i) : COLOR {
+			float4 frag(v2f i) : COLOR {
 				// pixelize uv
             	
 				float2 uv = floor(i.uv*_Pixels)/_Pixels;				
@@ -203,16 +216,16 @@ Shader "Unlit/GasLayers"
 				float posterized = floor(fbm2*4.0)/2.0;
 				float3 col;
 				if (fbm2 < 0.625) {
-					col = tex2D(_ColorScheme, float2(posterized, uv.y)).rgb;
+					col = SAMPLE_TEXTURE2D(_ColorScheme, sampler_ColorScheme, float2(posterized, uv.y)).rgb;
 				} else {
-					col = tex2D(_Dark_ColorScheme, float2(posterized-1.0, uv.y)).rgb;
+					col = SAMPLE_TEXTURE2D(_Dark_ColorScheme, sampler_Dark_ColorScheme, float2(posterized-1.0, uv.y)).rgb;
 				}
 				
 				float a = step(length(uv-float2(0.5,0.5)), 0.5);
-				return fixed4(col, a);
+				return float4(col, a);
 			}
             
-            ENDCG
+            ENDHLSL
         }
     }
 }

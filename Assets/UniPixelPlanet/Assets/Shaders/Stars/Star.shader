@@ -31,14 +31,24 @@ Shader "Unlit/Star"
 			ZWrite Off // don't write to depth buffer 
          	Blend SrcAlpha OneMinusSrcAlpha // use alpha blending
 
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
             #pragma multi_compile_fog
 
-            #include "UnityCG.cginc"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "../cginc/hlmod.cginc"
+            
+            // Compatibility macros to preserve legacy code structure (do not remove unused parts)
+            #ifndef UNITY_FOG_COORDS
+            #define UNITY_FOG_COORDS(idx)
+            #endif
+            #ifndef UNITY_TRANSFER_FOG
+            #define UNITY_TRANSFER_FOG(o,v)
+            #endif
+            #ifndef TRANSFORM_TEX_URP
+            #define TRANSFORM_TEX_URP(uv, st) ((uv) * (st).xy + (st).zw)
+            #endif
             
             struct appdata
             {
@@ -53,16 +63,18 @@ Shader "Unlit/Star"
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
             float4 _MainTex_ST;
             float _Pixels;
             float _Rotation;
-			float _Time_speed;
+            float _Time_speed;
             float _Size;
             int _OCTAVES;
             int _Seed;
-			float time;
-            sampler2D _GradientTex;
+            float time;
+            TEXTURE2D(_GradientTex);
+            SAMPLER(sampler_GradientTex);
             float _TILES;            
 			struct Input
 	        {
@@ -71,8 +83,8 @@ Shader "Unlit/Star"
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.vertex = TransformObjectToHClip(v.vertex);
+                o.uv = TRANSFORM_TEX_URP(v.uv, _MainTex_ST);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
@@ -148,7 +160,7 @@ Shader "Unlit/Star"
 			}
 
 
-			fixed4 frag(v2f i) : COLOR {
+			float4 frag(v2f i) : COLOR {
 				// pixelize uv
             	
 				float2 pixelized = floor(i.uv*_Pixels)/_Pixels;				
@@ -175,15 +187,15 @@ Shader "Unlit/Star"
 				
 				// constrain values 4 possibilities and then choose color based on those
 				float interpolate = floor(n * 3.0) / 3.0;
-				float3 c = tex2D(_GradientTex, float2(interpolate, 0.0)).rgb;
+				float3 c = SAMPLE_TEXTURE2D(_GradientTex, sampler_GradientTex, float2(interpolate, 0.0)).rgb;
 				
 				// cut out a circle
 				float a = step(distance(pixelized, float2(0.5,0.5)), .5);
 				
-				return fixed4(c, a);
+				return float4(c, a);
 				}
             
-            ENDCG
+            ENDHLSL
         }
     }
 }
