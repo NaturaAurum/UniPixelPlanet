@@ -1,10 +1,13 @@
-﻿namespace UniPixelPlanet.Runtime.Planets
+﻿using UnityEngine;
+
+namespace UniPixelPlanet.Runtime.Planets
 {
     public class PlanetPixelController : PlanetMaterialController
     {
-        public float pixel = 100;
+        [SerializeField]
+        private float pixel = 100;
         
-        public void UpdatePixel()
+        public override void Perform()
         {
             UpdateFloat(UniPixelPlanetShaderProps.KeyPixels, pixel);
         }

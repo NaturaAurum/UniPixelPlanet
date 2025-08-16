@@ -11,20 +11,21 @@ namespace UniPixelPlanet.Runtime.Planets
         public Color color;
     }
     
-    public class PlanetColorController : MonoBehaviour
+    public class PlanetColorController : PlanetMaterialController
     {
-        public List<ColorData> colors;
+        [SerializeField]
+        private List<ColorData> colors;
         
-        public void UpdateColor(Renderer renderComp, MaterialPropertyBlock propBlock)
+        public override void Perform()
         {
-            GetComponent<Renderer>().GetPropertyBlock(propBlock);
+            Get();
             
             foreach (var color in colors)
             {
-                propBlock.SetColor(color.propName, color.color);
+                PropertyBlock.SetColor(color.propName, color.color);
             }
 
-            GetComponent<Renderer>().SetPropertyBlock(propBlock);
+            Set();
         }
     }
 }

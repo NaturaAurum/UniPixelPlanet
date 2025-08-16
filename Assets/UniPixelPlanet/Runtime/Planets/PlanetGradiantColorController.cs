@@ -4,10 +4,12 @@ namespace UniPixelPlanet.Runtime.Planets
 {
     public class PlanetGradiantColorController : PlanetMaterialController
     {
-        public float[] colorTimes;
-        public Color[] colors;
+        [SerializeField]
+        private float[] colorTimes;
+        [SerializeField]
+        private Color[] colors;
 
-        public void UpdateColor()
+        public override void Perform()
         {
             UpdateColor(UniPixelPlanetShaderProps.KeyGradientTex, colors, colorTimes);
         }

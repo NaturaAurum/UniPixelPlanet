@@ -4,7 +4,8 @@ namespace UniPixelPlanet.Runtime.Planets
 {
     public class PlanetTimeController : PlanetMaterialController
     {
-        public float timeScale = 1;
+        [SerializeField]
+        private float timeScale = 1;
         
         private void UpdateTime()
         {

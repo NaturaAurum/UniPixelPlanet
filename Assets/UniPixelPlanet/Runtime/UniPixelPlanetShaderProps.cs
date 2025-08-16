@@ -28,6 +28,8 @@
 
         public const string KeyColorRiverCutoff = "_River_cutoff";
 
-        public const string KeyColorBlack = "_Black_color";
+        public const string KeyColorBlack = "_BlackColor";
+        public const string KeyRadius = "_Radius";
+        public const string KeyLightWidth = "_LightWidth";
     }
 }

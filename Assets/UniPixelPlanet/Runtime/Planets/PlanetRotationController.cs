@@ -1,10 +1,13 @@
-﻿namespace UniPixelPlanet.Runtime.Planets
+﻿using UnityEngine;
+
+namespace UniPixelPlanet.Runtime.Planets
 {
     public class PlanetRotationController : PlanetMaterialController
     {
-        public float rotation;
+        [SerializeField]
+        private float rotation;
         
-        public void UpdateRotation()
+        public override void Perform()
         {
             UpdateFloat(UniPixelPlanetShaderProps.KeyRotation, rotation);
         }

@@ -4,9 +4,10 @@ namespace UniPixelPlanet.Runtime.Planets
 {
     public class PlanetLightController : PlanetMaterialController
     {
-        public Vector2 lightOrigin;
+        [SerializeField]
+        private Vector2 lightOrigin;
         
-        public void UpdateLight()
+        public override void Perform()
         {
             UpdateVector(UniPixelPlanetShaderProps.KeyLightOrigin, lightOrigin);
         }

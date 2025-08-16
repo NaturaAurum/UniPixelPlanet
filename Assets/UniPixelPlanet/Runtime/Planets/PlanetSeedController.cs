@@ -1,10 +1,13 @@
-﻿namespace UniPixelPlanet.Runtime.Planets
+﻿using UnityEngine;
+
+namespace UniPixelPlanet.Runtime.Planets
 {
     public class PlanetSeedController : PlanetMaterialController
     {
-        public string seedString = "seed";
+        [SerializeField]
+        private string seedString = "seed";
 
-        public void UpdateSeed()
+        public override void Perform()
         {
             var seed = seedString.GetHashCode();
             var rng = new System.Random(seed);

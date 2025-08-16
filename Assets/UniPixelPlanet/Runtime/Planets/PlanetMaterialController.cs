@@ -5,49 +5,54 @@ namespace UniPixelPlanet.Runtime.Planets
     public class PlanetMaterialController : MonoBehaviour
     {
         public Renderer targetRenderer;
-        private MaterialPropertyBlock _propertyBlock;
+        protected MaterialPropertyBlock PropertyBlock;
 
         private void Awake()
         {
-            _propertyBlock = new MaterialPropertyBlock();
+            PropertyBlock = new MaterialPropertyBlock();
         }
 
-        private void Get()
+        protected void Get()
         {
-            targetRenderer.GetPropertyBlock(_propertyBlock);
+            targetRenderer.GetPropertyBlock(PropertyBlock);
         }
 
-        private void Set()
+        protected void Set()
         {
-            targetRenderer.SetPropertyBlock(_propertyBlock);
+            targetRenderer.SetPropertyBlock(PropertyBlock);
         }
 
         protected void UpdateFloat(string key, float value)
         {
             Get();
-            _propertyBlock.SetFloat(key, value);
+            PropertyBlock.SetFloat(key, value);
             Set();
         }
 
         protected void UpdateColor(string key, Color color)
         {
             Get();
-            _propertyBlock.SetColor(key, color);
+            PropertyBlock.SetColor(key, color);
             Set();
         }
 
         protected void UpdateVector(string key, Vector2 vector)
         {
             Get();
-            _propertyBlock.SetVector(key, vector);
+            PropertyBlock.SetVector(key, vector);
             Set();
         }
 
         protected void UpdateColor(string key, Color[] colors, float[] times)
         {
             Get();
-            _propertyBlock.SetTexture(key, GradientUtil.GenerateShaderTex(colors, times));
+            PropertyBlock.SetTexture(key, GradientUtil.GenerateShaderTex(colors, times));
             Set();
+        }
+
+        public virtual void Perform()
+        {
+            
         }
     }
 }
