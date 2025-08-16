@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 6013111702970766151}
   - component: {fileID: 6013111702970766144}
   m_Layer: 0
-  m_Name: Earth
+  m_Name: LandRivers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

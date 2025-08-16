@@ -33,5 +33,45 @@
         public const string KeyLightWidth = "_Light_width";
         public const string KeySize = "_Size";
         public const string KeyOctaves = "_OCTAVES";
+        public const string KeyTimeSpeed = "_Time_speed";
+
+        public const string KeyDiskWidth = "_Disk_width";
+        public const string KeyRingPerspective = "_Ring_perspective";
+
+        public const string KeyStormWidth = "_Storm_width";
+        public const string KeyStormDitherWidth = "_Storm_dither_width";
+
+        public const string KeyLightBorder = "_Light_border";
+        public const string KeyLightBorder1 = "_Light_border_1";
+        public const string KeyLightBorder2 = "_Light_border_2";
+        public const string KeyDitherSize = "_Dither_Size";
+
+        public const string KeyRiverCutoff = "_River_cutoff";
+        public const string KeyTiles = "_TILES";
+
+        public const string KeyCircleAmount = "_Circle_amount";
+        public const string KeyCircleSize = "_Circle_Size";
+
+        public const string KeyStretch = "_Stretch";
+        public const string KeyCloudCurve = "_Cloud_curve";
+        public const string KeyRingWidth = "_Ring_width";
+        public const string KeyScaleRelToPlanet = "_Scale_rel_to_planet";
+        public const string KeyColorScheme = "_ColorScheme";
+        public const string KeyDarkColorScheme = "_Dark_ColorScheme";
+        public const string KeyBands = "_Bands";
+
+        public const string KeyTilt = "tilt";
+        public const string KeyNLayers = "n_layers";
+        public const string KeyLayerHeight = "layer_height";
+        public const string KeyZoom = "zoom";
+        public const string KeyNColors = "n_colors";
+        public const string KeySwirl = "swirl";
+
+        public const string KeyShouldDither = "_should_dither";
+
+        public const string KeyLightDistance1 = "_Light_distance1";
+        public const string KeyLightDistance2 = "_Light_distance2";
+
+
     }
 }
