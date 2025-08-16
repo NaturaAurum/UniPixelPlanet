@@ -38,14 +38,24 @@ Shader "Unlit/GasPlanet"
 			ZWrite Off // don't write to depth buffer 
          	Blend SrcAlpha OneMinusSrcAlpha // use alpha blending
         	
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
             #pragma multi_compile_fog
 
-            #include "UnityCG.cginc"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "../cginc/hlmod.cginc"
+            
+            // Compatibility macros to preserve legacy code structure (do not remove unused parts)
+            #ifndef UNITY_FOG_COORDS
+            #define UNITY_FOG_COORDS(idx)
+            #endif
+            #ifndef UNITY_TRANSFER_FOG
+            #define UNITY_TRANSFER_FOG(o,v)
+            #endif
+            #ifndef TRANSFORM_TEX_URP
+            #define TRANSFORM_TEX_URP(uv, st) ((uv) * (st).xy + (st).zw)
+            #endif
             
             struct appdata
             {
@@ -60,35 +70,36 @@ Shader "Unlit/GasPlanet"
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
             float4 _MainTex_ST;
             float _Pixels;
             float _Rotation;
-			float2 _Light_origin;    	
-			float _Time_speed;
+            float2 _Light_origin;
+            float _Time_speed;
             float _Stretch;
             float _Cloud_curve;
             float _Cloud_cover;
             float _Light_border_1;
-			float _Light_border_2;
-			fixed4 _Base_color;
-            fixed4 _Outline_color;
-			fixed4 _Shadow_base_color;
-			fixed4 _Shadow_outline_color;
-			float _Size;
+            float _Light_border_2;
+            float4 _Base_color;
+            float4 _Outline_color;
+            float4 _Shadow_base_color;
+            float4 _Shadow_outline_color;
+            float _Size;
             int _OCTAVES;
             int _Seed;
-			float time;
+            float time;
             
-			struct Input
+            struct Input
 	        {
 	            float2 uv_MainTex;
 	        };
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.vertex = TransformObjectToHClip(v.vertex);
+                o.uv = TRANSFORM_TEX_URP(v.uv, _MainTex_ST);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
@@ -165,7 +176,7 @@ Shader "Unlit/GasPlanet"
 				return coord + 0.5;
 			}
 
-			fixed4 frag(v2f i) : COLOR {
+			float4 frag(v2f i) : COLOR {
 				// pixelize uv
             	
 				float2 uv = floor(i.uv*_Pixels)/_Pixels;				
@@ -202,10 +213,10 @@ Shader "Unlit/GasPlanet"
 					col = _Shadow_outline_color.rgb;
 				}
 				
-            	return fixed4(col, step(_Cloud_cover, c) * a);
+            	return float4(col, step(_Cloud_cover, c) * a);
 			}
             
-            ENDCG
+            ENDHLSL
         }
     }
 }
