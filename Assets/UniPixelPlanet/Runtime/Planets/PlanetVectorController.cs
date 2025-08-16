@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UniPixelPlanet.Runtime.Attributes;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UniPixelPlanet.Runtime.Planets
 {
