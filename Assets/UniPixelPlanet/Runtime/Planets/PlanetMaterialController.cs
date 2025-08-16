@@ -2,24 +2,26 @@
 
 namespace UniPixelPlanet.Runtime.Planets
 {
+    [RequireComponent(typeof(Renderer))]
     public class PlanetMaterialController : MonoBehaviour
     {
-        public Renderer targetRenderer;
+        private Renderer _targetRenderer;
         protected MaterialPropertyBlock PropertyBlock;
 
         private void Awake()
         {
             PropertyBlock = new MaterialPropertyBlock();
+            _targetRenderer = GetComponent<Renderer>();
         }
 
         protected void Get()
         {
-            targetRenderer.GetPropertyBlock(PropertyBlock);
+            _targetRenderer.GetPropertyBlock(PropertyBlock);
         }
 
         protected void Set()
         {
-            targetRenderer.SetPropertyBlock(PropertyBlock);
+            _targetRenderer.SetPropertyBlock(PropertyBlock);
         }
 
         protected void UpdateFloat(string key, float value)

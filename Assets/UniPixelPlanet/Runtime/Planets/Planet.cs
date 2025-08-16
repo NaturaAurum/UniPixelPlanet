@@ -12,6 +12,11 @@ namespace UniPixelPlanet.Runtime.Planets
             _controllers = GetComponentsInChildren<PlanetMaterialController>();
         }
 
+        private void Start()
+        {
+            Perform();
+        }
+
         public void Perform()
         {
             foreach (var controller in _controllers)
