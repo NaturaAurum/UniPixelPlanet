@@ -1,7 +1,8 @@
 Shader "Unlit/Asteroid"
 {
     Properties
-    {    	
+    {
+    	_MainTex ("Texture", 2D) = "white" {}
 	    _Pixels("Pixels", range(10,512)) = 100.0
 	    _Rotation("Rotation",range(0.0, 6.28)) = 0.0
     	_Light_origin("Light origin", Vector) = (0.39,0.39,0.39,0.39)
