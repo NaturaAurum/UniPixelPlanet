@@ -2,7 +2,11 @@
   "name": "com.naturaaurum.unipixelplanet",
   "displayName": "UniPixelPlanet",
   "version": "1.0.0",
-  "unity": "6000.1.10",
+  "unity": "2021.3",
+  "description": "A tool to generate pixel art style planets.",
   "license": "MIT",
+  "author": {
+    "name": "NaturaAurum"
+  },
   "dependencies": {}
 }
