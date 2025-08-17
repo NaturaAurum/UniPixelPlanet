@@ -10,6 +10,8 @@
 - Enable installation via Git URL in the Unity Package Manager.
 - Refactor to support runtime execution.
 
+https://github.com/NaturaAurum/UniPixelPlanet.git?path=/Assets/UniPixelPlanet
+
 # UniPixelPlanet for Sprites
 
 I prepared UniPixelPlanet from [hmcGit](https://github.com/hmcGit) so I can use them in a Unity 2D project as Sprites.
