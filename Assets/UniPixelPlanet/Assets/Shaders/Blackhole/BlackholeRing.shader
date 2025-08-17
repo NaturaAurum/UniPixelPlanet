@@ -223,8 +223,7 @@ Shader "Unlit/BlackholeRing"
 
                 // apply some colors based on final value
                 float posterized = floor((disk + light_d) * 4.0) / 4.0;
-                float3 col;
-                col = SAMPLE_TEXTURE2D(_GradientTex, sampler_GradientTex, float2(posterized, uv.y)).rgb;
+                float3 col = SAMPLE_TEXTURE2D(_GradientTex, sampler_GradientTex, float2(posterized, uv.y)).rgb;
 
                 // this can be toggled on to achieve a more "realistic" blacak hole, with red and blue shifting. This was just me messing around so can probably be more optimized and done cleaner
                 //	col.rgb *= 1.0 - pow(uv.x, 1.0);

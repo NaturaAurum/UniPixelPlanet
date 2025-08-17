@@ -15,6 +15,7 @@ namespace UniPixelPlanet.Runtime.Planets
     
     public class PlanetColorController : PlanetMaterialController
     {
+        public IReadOnlyList<ColorData> Colors => colors;
         [SerializeField]
         private List<ColorData> colors;
         

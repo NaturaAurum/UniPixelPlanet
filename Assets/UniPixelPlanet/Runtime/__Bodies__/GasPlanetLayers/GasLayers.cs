@@ -88,11 +88,11 @@ namespace UniPixelPlanet.Runtime.__Bodies__.GasPlanetLayers
             var tex1 = GradientUtil.GenerateShaderTex(new[] { color1, color2, color3 }, _colorTimes);
             var tex2 = GradientUtil.GenerateShaderTex(new[] { colorDark1, colorDark2, colorDark3 }, _colorTimes);
 
-            _gasPlanetMat.SetTexture(UniPixelPlanetShaderProps.KeyTextureKeyword1, tex1);
-            _gasPlanetMat.SetTexture(UniPixelPlanetShaderProps.KeyTextureKeyword2, tex2);
+            _gasPlanetMat.SetTexture(UniPixelPlanetShaderProps.KeyColorScheme, tex1);
+            _gasPlanetMat.SetTexture(UniPixelPlanetShaderProps.KeyDarkColorScheme, tex2);
 
-            _ringMat.SetTexture(UniPixelPlanetShaderProps.KeyTextureKeyword1, tex1);
-            _ringMat.SetTexture(UniPixelPlanetShaderProps.KeyTextureKeyword2, tex2);
+            _ringMat.SetTexture(UniPixelPlanetShaderProps.KeyColorScheme, tex1);
+            _ringMat.SetTexture(UniPixelPlanetShaderProps.KeyDarkColorScheme, tex2);
         }
 
         public override void Perform()

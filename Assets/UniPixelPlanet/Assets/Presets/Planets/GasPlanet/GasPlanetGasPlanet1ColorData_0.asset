@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b70cfa3bbc54add92c69a2ee8e2d915, type: 3}
+  m_Name: GasPlanetGasPlanet1ColorData_0
+  m_EditorClassIdentifier: 
+  data:
+  - propName: _Base_color
+    value: {r: 0.9411765, g: 0.70980394, b: 0.25490198, a: 1}
+  - propName: _Outline_color
+    value: {r: 0.8117647, g: 0.45882353, b: 0.16862746, a: 1}
+  - propName: _Shadow_base_color
+    value: {r: 0.67058825, g: 0.31764707, b: 0.1882353, a: 1}
+  - propName: _Shadow_outline_color
+    value: {r: 0.49019608, g: 0.21960784, b: 0.2, a: 1}

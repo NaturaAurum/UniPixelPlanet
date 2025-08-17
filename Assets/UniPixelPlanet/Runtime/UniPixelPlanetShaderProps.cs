@@ -10,8 +10,6 @@
         public const string KeyCloudCover = "_Cloud_cover";
 
         public const string KeyGradientTex = "_GradientTex";
-        public const string KeyTextureKeyword1 = "_ColorScheme";
-        public const string KeyTextureKeyword2 = "_Dark_ColorScheme";
 
         public const string KeyColor1 = "_Color1";
         public const string KeyColor2 = "_Color2";

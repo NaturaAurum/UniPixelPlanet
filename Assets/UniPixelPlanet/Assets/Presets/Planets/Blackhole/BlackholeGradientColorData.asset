@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43066f4f1cdc42518e3a5f4936d68f70, type: 3}
+  m_Name: BlackholeGradientColorData
+  m_EditorClassIdentifier: 
+  data:
+  - propName: _GradientTex
+    value:
+      colorTime: 0
+      color: {r: 1, g: 1, b: 0.92156863, a: 1}
+  - propName: _GradientTex
+    value:
+      colorTime: 1
+      color: {r: 0.92941177, g: 0.48235294, b: 0.22352941, a: 1}

@@ -22,6 +22,7 @@ namespace UniPixelPlanet.Runtime.Planets
         protected void Set()
         {
             _targetRenderer.SetPropertyBlock(PropertyBlock);
+            PropertyBlock.Clear();
         }
 
         protected void UpdateFloat(string key, float value)

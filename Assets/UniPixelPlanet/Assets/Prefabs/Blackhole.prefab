@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d754d87f2541efbecc40e2c2cd2013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  propName: _GradientTex
   colorTimes:
   - 0
   - 1
@@ -170,9 +171,7 @@ MonoBehaviour:
     value: 0
   - propName: _Radius
     value: 0.5
-  - propName: _LightWidth
-    value: 0.05
-  - propName: _LightWidth
+  - propName: _Light_width
     value: 0.05
 --- !u!1 &1760490342730632095
 GameObject:
@@ -188,6 +187,7 @@ GameObject:
   - component: {fileID: 8903685183317002100}
   - component: {fileID: 6181011444804884893}
   - component: {fileID: 5353133772046289925}
+  - component: {fileID: 6046136871998673366}
   m_Layer: 0
   m_Name: BlackholeRing
   m_TagString: Untagged
@@ -290,12 +290,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d754d87f2541efbecc40e2c2cd2013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  propName: _GradientTex
   colorTimes:
   - 0
   - 0.25
   - 0.5
   - 0.75
-  - 0.1
+  - 1
   colors:
   - {r: 1, g: 1, b: 0.92156863, a: 1}
   - {r: 1, g: 0.9607843, b: 0.2509804, a: 1}
@@ -330,6 +331,35 @@ MonoBehaviour:
   list:
   - propName: _Pixels
     value: 300
+  - propName: _Rotation
+    value: 0.766
+  - propName: _Time_speed
+    value: 0.2
+  - propName: _Disk_width
+    value: 0.065
+  - propName: _should_dither
+    value: 1
+  - propName: _Ring_perspective
+    value: 14
+  - propName: _OCTAVES
+    value: 3
+  - propName: _Size
+    value: 6.598
+--- !u!114 &6046136871998673366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760490342730632095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+  - propName: _Light_origin
+    value: {x: 0.607, y: 0.444, z: 0, w: 0}
 --- !u!1 &1760490343617969461
 GameObject:
   m_ObjectHideFlags: 0

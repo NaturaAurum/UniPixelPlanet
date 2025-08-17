@@ -16,6 +16,8 @@ namespace UniPixelPlanet.Runtime.Planets
     
     public class PlanetMaterialListController<T> : PlanetMaterialController where T : struct
     {
+        public IReadOnlyList<Elements<T>> List => list;
+        
         [SerializeField]
         private List<Elements<T>> list;
 

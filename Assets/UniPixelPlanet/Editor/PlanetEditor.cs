@@ -1,5 +1,3 @@
-using UniPixelPlanet.Runtime;
-using UniPixelPlanet.Runtime.__Bodies__;
 using UniPixelPlanet.Runtime.Planets;
 using UnityEditor;
 using UnityEngine;

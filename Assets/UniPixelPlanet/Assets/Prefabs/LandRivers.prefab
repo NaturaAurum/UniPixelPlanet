@@ -10,6 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6013111702393176162}
   - component: {fileID: 6013111702393176163}
+  - component: {fileID: 6475849140548687485}
+  - component: {fileID: 6537597611312684810}
+  - component: {fileID: 3817474530299069080}
+  - component: {fileID: 4266722297342958791}
+  - component: {fileID: 2281305937317000628}
   m_Layer: 0
   m_Name: Land
   m_TagString: Untagged
@@ -87,6 +92,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6475849140548687485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013111702393176172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+  - propName: _Pixels
+    value: 100
+  - propName: _Light_border_1
+    value: 0.287
+  - propName: _Light_border_2
+    value: 0.476
+  - propName: _River_cutoff
+    value: 0.368
+  - propName: _Size
+    value: 6
+  - propName: _Rotation
+    value: 5.2
+  - propName: _Time_speed
+    value: -0.118
+  - propName: _Dither_Size
+    value: 2
+  - propName: _OCTAVES
+    value: 6
+--- !u!114 &6537597611312684810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013111702393176172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58f02f22c534fe1a6f0d314a14882f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - propName: _Color1
+    color: {r: 0.3882353, g: 0.67058825, b: 0.24705882, a: 1}
+  - propName: _Color2
+    color: {r: 0.23137255, g: 0.49019608, b: 0.30980393, a: 1}
+  - propName: _Color3
+    color: {r: 0.18431373, g: 0.34117648, b: 0.3254902, a: 1}
+  - propName: _Color4
+    color: {r: 0.15686275, g: 0.20784314, b: 0.2509804, a: 1}
+  - propName: _River_color
+    color: {r: 0.30980393, g: 0.6431373, b: 0.72156864, a: 1}
+  - propName: _River_color_dark
+    color: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
+--- !u!114 &3817474530299069080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013111702393176172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8aed1a48e4babb83f8e55ffd6648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
+--- !u!114 &4266722297342958791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013111702393176172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2b1b5c58f84d6492fcb73978a7a309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedString: seed
+--- !u!114 &2281305937317000628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013111702393176172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+  - propName: _Light_origin
+    value: {x: 0.54, y: 0.45, z: 0, w: 0}
 --- !u!1 &6013111702667789510
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +199,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6013111702667789508}
   - component: {fileID: 6013111702667789509}
+  - component: {fileID: 7313394070026061892}
+  - component: {fileID: 488883064120623446}
+  - component: {fileID: 5446295231031171366}
+  - component: {fileID: 3415660998159916514}
+  - component: {fileID: 1589504156978102268}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Untagged
@@ -174,6 +281,101 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7313394070026061892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013111702667789510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58f02f22c534fe1a6f0d314a14882f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - propName: _Base_color
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - propName: _Outline_color
+    color: {r: 0.8745098, g: 0.8784314, b: 0.9098039, a: 1}
+  - propName: _Shadow_base_color
+    color: {r: 0.40784314, g: 0.43529412, b: 0.6, a: 1}
+  - propName: _Shadow_outline_color
+    color: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
+--- !u!114 &488883064120623446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013111702667789510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+  - propName: _Pixels
+    value: 100
+  - propName: _Rotation
+    value: 6.28
+  - propName: _Cloud_cover
+    value: 0.4918952
+  - propName: _Cloud_cover
+    value: 0.4918952
+  - propName: _Time_speed
+    value: 0.2
+  - propName: _Stretch
+    value: 2
+  - propName: _Light_border_1
+    value: 0.52
+  - propName: _Light_border_2
+    value: 0.62
+  - propName: _Size
+    value: 7.745
+  - propName: _OCTAVES
+    value: 2
+--- !u!114 &5446295231031171366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013111702667789510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8aed1a48e4babb83f8e55ffd6648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
+--- !u!114 &3415660998159916514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013111702667789510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2b1b5c58f84d6492fcb73978a7a309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedString: seed
+--- !u!114 &1589504156978102268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013111702667789510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+  - propName: _Light_origin
+    value: {x: 0.5923428, y: 0.5722326, z: 0, w: 0}
 --- !u!1 &6013111702970766145
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6013111702970766151}
-  - component: {fileID: 6013111702970766144}
+  - component: {fileID: 5199661762348652163}
   m_Layer: 0
   m_Name: LandRivers
   m_TagString: Untagged
@@ -208,7 +410,7 @@ Transform:
   - {fileID: 6013111702667789508}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6013111702970766144
+--- !u!114 &5199661762348652163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,22 +419,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6013111702970766145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e59f469c41553944af4cb9276317a6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d03a89962634c359b930fe3ceeff495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: 100
-  seed: Seed
-  calcSeed: 0
-  generateColors: 0
-  colorLand1: {r: 0.3882353, g: 0.67058825, b: 0.24705882, a: 1}
-  colorLand2: {r: 0.23137255, g: 0.49019608, b: 0.30980393, a: 1}
-  colorLand3: {r: 0.18431373, g: 0.34117648, b: 0.3254902, a: 1}
-  colorLand4: {r: 0.15686275, g: 0.20784314, b: 0.2509804, a: 1}
-  colorRiver: {r: 0.30980393, g: 0.6431373, b: 0.72156864, a: 1}
-  colorRiverDark: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
-  colorCloud1: {r: 1, g: 1, b: 1, a: 1}
-  colorCloud2: {r: 0.8745098, g: 0.8784314, b: 0.9098039, a: 1}
-  colorCloud3: {r: 0.40784314, g: 0.43529412, b: 0.6, a: 1}
-  colorCloud4: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
-  land: {fileID: 6013111702393176172}
-  cloud: {fileID: 6013111702667789510}

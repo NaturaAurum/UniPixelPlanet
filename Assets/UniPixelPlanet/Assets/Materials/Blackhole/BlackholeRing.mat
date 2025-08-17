@@ -123,7 +123,7 @@ Material:
     - _RingPerspective: 4
     - _Ring_perspective: 14
     - _Ring_width: 0.1
-    - _Rotation: 0.766
+    - _Rotation: 0
     - _Scale_rel_to_planet: 6
     - _Seed: 8.04
     - _ShouldDither: 1
