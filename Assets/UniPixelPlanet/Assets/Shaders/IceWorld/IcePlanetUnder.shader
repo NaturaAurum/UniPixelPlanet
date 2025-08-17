@@ -9,8 +9,8 @@ Shader "Unlit/IcePlanetUnder"
 	    _Time_speed("Time Speed",range(-1.0, 1.0)) = 0.2
 	    _Dither_Size("Dither Size",range(0.0, 10.0)) = 2.0
     	
-	    light_border_1("Light border1",range(0.0, 1.0)) = 0.52
-	    light_border_2("Light border2",range(0.0, 1.0)) = 0.62
+	    _Light_border_1("Light border1",range(0.0, 1.0)) = 0.52
+	    _Light_border_2("Light border2",range(0.0, 1.0)) = 0.62
     	    	
 	    _Color1("Color1", Color) = (1,1,1,1)
     	_Color2("Color2", Color) = (1,1,1,1)
@@ -77,8 +77,8 @@ Shader "Unlit/IcePlanetUnder"
             float _Dither_Size;
             float2 _Light_origin;
             float _Time_speed;
-            float light_border_1;
-            float light_border_2;
+            float _Light_border_1;
+            float _Light_border_2;
             float _Size;
             int _OCTAVES;
             int _Seed;
@@ -174,15 +174,15 @@ Shader "Unlit/IcePlanetUnder"
 			
 				// now we can assign colors based on distance to light origin
 				float3 col = _Color1.rgb;
-				if (d_light > light_border_1) {
+				if (d_light > _Light_border_1) {
 					col = _Color2.rgb;
-					if (d_light < light_border_1 + dither_border && dith) {
+					if (d_light < _Light_border_1 + dither_border && dith) {
 						col = _Color1.rgb;
 					}
 				}
-				if (d_light > light_border_2) {
+				if (d_light > _Light_border_2) {
 					col = _Color3.rgb;
-					if (d_light < light_border_2 + dither_border && dith) {
+					if (d_light < _Light_border_2 + dither_border && dith) {
 						col = _Color2.rgb;
 					}
 				}

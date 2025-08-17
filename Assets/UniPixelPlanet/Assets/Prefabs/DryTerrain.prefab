@@ -104,25 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list:
-  - propName: _Pixels
-    value: 100
-  - propName: _Rotation
-    value: 6.28
-  - propName: _Rotation
-    value: 6.28
-  - propName: _Time_speed
-    value: 0.2
-  - propName: _Dither_Size
-    value: 2
-  - propName: _Light_distance1
-    value: 0.362
-  - propName: _Light_distance2
-    value: 0.525
-  - propName: _Size
-    value: 8
-  - propName: _OCTAVES
-    value: 3
+  listData: {fileID: 11400000, guid: a8f6719bb6dafb64ba56105cc2a8e099, type: 2}
 --- !u!114 &2525054630451736934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,19 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d754d87f2541efbecc40e2c2cd2013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propName: _GradientTex
-  colorTimes:
-  - 0
-  - 0.2
-  - 0.6
-  - 0.8
-  - 1
-  colors:
-  - {r: 1, g: 0.5372549, b: 0.2, a: 1}
-  - {r: 0.9019608, g: 0.27058825, b: 0.22352941, a: 1}
-  - {r: 0.6784314, g: 0.18431373, b: 0.27058825, a: 1}
-  - {r: 0.32156864, g: 0.2, b: 0.24705882, a: 1}
-  - {r: 0.23921569, g: 0.16078432, b: 0.21176471, a: 1}
+  gradientColorData: {fileID: 11400000, guid: e6f3ce89e37eedc459c0186c5d042191, type: 2}
 --- !u!114 &3633676176087497855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,9 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list:
-  - propName: _Light_origin
-    value: {x: 1.073581, y: 0.8180112, z: 0, w: 0}
+  listData: {fileID: 11400000, guid: fdf739fa1fefc7d478314b5e873f1bed, type: 2}
 --- !u!1 &6311437475427189351
 GameObject:
   m_ObjectHideFlags: 0

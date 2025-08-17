@@ -1,25 +1,22 @@
-﻿using UniPixelPlanet.Runtime.Attributes;
+﻿using System.Linq;
+using UniPixelPlanet.Runtime.Data;
 using UnityEngine;
 
 namespace UniPixelPlanet.Runtime.Planets
 {
     public class PlanetGradiantColorController : PlanetMaterialController
     {
-        public string PropName => propName;
-        public float[] Times => colorTimes;
-        public Color[] Colors => colors;
-        
         [SerializeField]
-        [ShaderProp]
-        private string propName;
-        [SerializeField]
-        private float[] colorTimes;
-        [SerializeField]
-        private Color[] colors;
+        private PlanetGradientColorData gradientColorData;
 
         public override void Perform()
         {
-            UpdateColor(propName, colors, colorTimes);
+            foreach (var gradientGroup in gradientColorData.Gradients)
+            {
+                var colors = gradientGroup.colors.Select(c => c.color).ToArray();
+                var times = gradientGroup.colors.Select(c => c.colorTime).ToArray();
+                UpdateColor(gradientGroup.propName, colors, times);
+            }
         }
     }
 }

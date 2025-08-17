@@ -103,33 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list:
-  - propName: _Pixels
-    value: 200
-  - propName: _Rotation
-    value: 0.674
-  - propName: _Time_speed
-    value: 1
-  - propName: _Dither_Size
-    value: 2
-  - propName: _should_dither
-    value: 1
-  - propName: _Size
-    value: 7
-  - propName: _OCTAVES
-    value: 2
-  - propName: tilt
-    value: 3
-  - propName: n_layers
-    value: 4
-  - propName: layer_height
-    value: 0.4
-  - propName: zoom
-    value: 1.375
-  - propName: n_colors
-    value: 6
-  - propName: swirl
-    value: -9
+  listData: {fileID: 11400000, guid: a437003c641339648bf73586286ef4b1, type: 2}
 --- !u!114 &2352425181469604856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,21 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d754d87f2541efbecc40e2c2cd2013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propName: _GradientTex
-  colorTimes:
-  - 0
-  - 0.2
-  - 0.4
-  - 0.6
-  - 0.8
-  - 1
-  colors:
-  - {r: 1, g: 1, b: 0.92156863, a: 1}
-  - {r: 1, g: 0.89411765, b: 0.47058824, a: 1}
-  - {r: 0.56078434, g: 0.87058824, b: 0.3647059, a: 1}
-  - {r: 0.23921569, g: 0.43137255, b: 0.4392157, a: 1}
-  - {r: 0.19607843, g: 0.24313726, b: 0.30980393, a: 1}
-  - {r: 0.19607843, g: 0.16078432, b: 0.2784314, a: 1}
+  gradientColorData: {fileID: 11400000, guid: 76733a7ad644d694cb96787e23344746, type: 2}
 --- !u!114 &453354878804093162
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ce0d9c0a0f4d609bed598b2d27a540, type: 3}
+  m_Name: GalaxySquareFloatData
+  m_EditorClassIdentifier: 
+  data:
+  - propName: _Pixels
+    value: 200
+  - propName: _Rotation
+    value: 0.674
+  - propName: _Time_speed
+    value: 1
+  - propName: _Dither_Size
+    value: 2
+  - propName: _should_dither
+    value: 1
+  - propName: _Size
+    value: 7
+  - propName: _OCTAVES
+    value: 2
+  - propName: tilt
+    value: 3
+  - propName: n_layers
+    value: 4
+  - propName: layer_height
+    value: 0.4
+  - propName: zoom
+    value: 1.375
+  - propName: n_colors
+    value: 6
+  - propName: swirl
+    value: -9

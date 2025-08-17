@@ -104,25 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list:
-  - propName: _Pixels
-    value: 100
-  - propName: _Light_border_1
-    value: 0.287
-  - propName: _Light_border_2
-    value: 0.476
-  - propName: _River_cutoff
-    value: 0.368
-  - propName: _Size
-    value: 6
-  - propName: _Rotation
-    value: 5.2
-  - propName: _Time_speed
-    value: -0.118
-  - propName: _Dither_Size
-    value: 2
-  - propName: _OCTAVES
-    value: 6
+  listData: {fileID: 11400000, guid: 8a04ed0f0e5bb344b8832dc0a5ca9844, type: 2}
 --- !u!114 &6537597611312684810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,19 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58f02f22c534fe1a6f0d314a14882f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - propName: _Color1
-    color: {r: 0.3882353, g: 0.67058825, b: 0.24705882, a: 1}
-  - propName: _Color2
-    color: {r: 0.23137255, g: 0.49019608, b: 0.30980393, a: 1}
-  - propName: _Color3
-    color: {r: 0.18431373, g: 0.34117648, b: 0.3254902, a: 1}
-  - propName: _Color4
-    color: {r: 0.15686275, g: 0.20784314, b: 0.2509804, a: 1}
-  - propName: _River_color
-    color: {r: 0.30980393, g: 0.6431373, b: 0.72156864, a: 1}
-  - propName: _River_color_dark
-    color: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
+  listData: {fileID: 11400000, guid: f19b41b7d2d4ba146b994407242e1339, type: 2}
 --- !u!114 &3817474530299069080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,9 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list:
-  - propName: _Light_origin
-    value: {x: 0.54, y: 0.45, z: 0, w: 0}
+  listData: {fileID: 11400000, guid: 7d98c45aad91fe742a5ddba6639055ae, type: 2}
 --- !u!1 &6013111702667789510
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,15 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58f02f22c534fe1a6f0d314a14882f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - propName: _Base_color
-    color: {r: 1, g: 1, b: 1, a: 1}
-  - propName: _Outline_color
-    color: {r: 0.8745098, g: 0.8784314, b: 0.9098039, a: 1}
-  - propName: _Shadow_base_color
-    color: {r: 0.40784314, g: 0.43529412, b: 0.6, a: 1}
-  - propName: _Shadow_outline_color
-    color: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
+  listData: {fileID: 11400000, guid: e952b03d8ed8dd04badc7c4919089a20, type: 2}
 --- !u!114 &488883064120623446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,27 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list:
-  - propName: _Pixels
-    value: 100
-  - propName: _Rotation
-    value: 6.28
-  - propName: _Cloud_cover
-    value: 0.4918952
-  - propName: _Cloud_cover
-    value: 0.4918952
-  - propName: _Time_speed
-    value: 0.2
-  - propName: _Stretch
-    value: 2
-  - propName: _Light_border_1
-    value: 0.52
-  - propName: _Light_border_2
-    value: 0.62
-  - propName: _Size
-    value: 7.745
-  - propName: _OCTAVES
-    value: 2
+  listData: {fileID: 11400000, guid: 556b2f475cc3f7649a50cdb14c44e1b3, type: 2}
 --- !u!114 &5446295231031171366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,9 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list:
-  - propName: _Light_origin
-    value: {x: 0.5923428, y: 0.5722326, z: 0, w: 0}
+  listData: {fileID: 11400000, guid: 83d982d929f88884fae24f2a51ecc48b, type: 2}
 --- !u!1 &6013111702970766145
 GameObject:
   m_ObjectHideFlags: 0

@@ -70,6 +70,9 @@
         public const string KeyLightDistance1 = "_Light_distance1";
         public const string KeyLightDistance2 = "_Light_distance2";
 
+        public const string KeyLandCutoff = "_Land_cutoff";
+        public const string KeyLakeCutoff = "_Lake_cutoff";
 
+        public const string KeyScale = "_Scale";
     }
 }

@@ -1,25 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using UniPixelPlanet.Runtime.Attributes;
+using UniPixelPlanet.Runtime.Data;
 using UnityEngine;
 
 namespace UniPixelPlanet.Runtime.Planets
 {
-    [Serializable]
-    public struct Elements<T> where T : struct
-    {
-        [ShaderProp]
-        public string propName;
-
-        public T value;
-    }
-    
     public class PlanetMaterialListController<T> : PlanetMaterialController where T : struct
     {
-        public IReadOnlyList<Elements<T>> List => list;
-        
         [SerializeField]
-        private List<Elements<T>> list;
+        private PlanetListData<T> listData;
 
         protected delegate void PropertySetter(string name, T value);
 
@@ -29,7 +19,7 @@ namespace UniPixelPlanet.Runtime.Planets
         {
             Get();
             
-            foreach (var element in list)
+            foreach (var element in listData.Data)
             {
                 Setter(element.propName, element.value);
             }

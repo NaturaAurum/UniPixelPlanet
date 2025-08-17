@@ -10,6 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6712188353046255554}
   - component: {fileID: 6712188353046255565}
+  - component: {fileID: 1021744760848211070}
+  - component: {fileID: 7471165595519854991}
+  - component: {fileID: 1361027137861214838}
+  - component: {fileID: 1842051506100945529}
+  - component: {fileID: 5134695062481478328}
   m_Layer: 0
   m_Name: PlanetUnder
   m_TagString: Untagged
@@ -87,6 +92,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1021744760848211070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353046255564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2b1b5c58f84d6492fcb73978a7a309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedString: seed
+--- !u!114 &7471165595519854991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353046255564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8aed1a48e4babb83f8e55ffd6648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
+--- !u!114 &1361027137861214838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353046255564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listData: {fileID: 11400000, guid: 9dbc71b7244efa44d9a91286826befc0, type: 2}
+--- !u!114 &1842051506100945529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353046255564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58f02f22c534fe1a6f0d314a14882f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listData: {fileID: 11400000, guid: a4e855a72836ca24da926cbcb327f29a, type: 2}
+--- !u!114 &5134695062481478328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353046255564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listData: {fileID: 11400000, guid: cacf64eee2b1f8242aba989ad3bc2ccf, type: 2}
 --- !u!1 &6712188353631335695
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +167,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6712188353631335693}
   - component: {fileID: 6712188353631335692}
+  - component: {fileID: 5071644618879534679}
+  - component: {fileID: 2885731971062101675}
+  - component: {fileID: 7664851269746737724}
+  - component: {fileID: 7808706085402196545}
+  - component: {fileID: 7328942986724899192}
   m_Layer: 0
   m_Name: Lakes
   m_TagString: Untagged
@@ -174,6 +249,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5071644618879534679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353631335695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2b1b5c58f84d6492fcb73978a7a309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedString: seed
+--- !u!114 &2885731971062101675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353631335695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8aed1a48e4babb83f8e55ffd6648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
+--- !u!114 &7664851269746737724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353631335695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listData: {fileID: 11400000, guid: 988ca1669e672d540a3aa8f18df5c2c2, type: 2}
+--- !u!114 &7808706085402196545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353631335695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58f02f22c534fe1a6f0d314a14882f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listData: {fileID: 11400000, guid: dfc7a45e77276f04a908d207d8bd09be, type: 2}
+--- !u!114 &7328942986724899192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353631335695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listData: {fileID: 11400000, guid: e190d6694b4408740accb421cab275db, type: 2}
 --- !u!1 &6712188353941558388
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +324,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6712188353941558346}
   - component: {fileID: 6712188353941558389}
+  - component: {fileID: 8815546740158969396}
+  - component: {fileID: 7272365922471223194}
+  - component: {fileID: 6877073954537962783}
+  - component: {fileID: 5416731395134078769}
+  - component: {fileID: 7472497530439833221}
   m_Layer: 0
   m_Name: Clouds
   m_TagString: Untagged
@@ -261,6 +406,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8815546740158969396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353941558388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2b1b5c58f84d6492fcb73978a7a309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedString: seed
+--- !u!114 &7272365922471223194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353941558388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8aed1a48e4babb83f8e55ffd6648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 1
+--- !u!114 &6877073954537962783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353941558388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listData: {fileID: 11400000, guid: ab415a17350782b45b0fa7c8edf51b80, type: 2}
+--- !u!114 &5416731395134078769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353941558388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58f02f22c534fe1a6f0d314a14882f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listData: {fileID: 11400000, guid: 30e3781eaeda2ce4cb84067eee734b2c, type: 2}
+--- !u!114 &7472497530439833221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712188353941558388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listData: {fileID: 11400000, guid: 77e60818167110a458ccb5cf4a16698f, type: 2}
 --- !u!1 &6712188354421008571
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6712188354421008569}
-  - component: {fileID: 6712188354421008568}
+  - component: {fileID: 2076879849718475511}
   m_Layer: 0
   m_Name: IceWorld
   m_TagString: Untagged
@@ -296,7 +506,7 @@ Transform:
   - {fileID: 6712188353941558346}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6712188354421008568
+--- !u!114 &2076879849718475511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,23 +515,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6712188354421008571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64cd045b012cab14d8c494d67c8bb69b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d03a89962634c359b930fe3ceeff495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pixel: 100
-  seed: Seed
-  calcSeed: 0
-  generateColors: 0
-  colorLand1: {r: 0.98039216, g: 1, b: 1, a: 1}
-  colorLand2: {r: 0.78039217, g: 0.83137256, b: 0.88235295, a: 1}
-  colorLand3: {r: 0.57254905, g: 0.56078434, b: 0.72156864, a: 1}
-  colorLakes1: {r: 0.30980393, g: 0.6431373, b: 0.72156864, a: 1}
-  colorLakes2: {r: 0.29803923, g: 0.40784314, b: 0.52156866, a: 1}
-  colorLakes3: {r: 0.22745098, g: 0.24705882, b: 0.36862746, a: 1}
-  colorCloud1: {r: 0.88235295, g: 0.9490196, b: 1, a: 1}
-  colorCloud2: {r: 0.7529412, g: 0.8901961, b: 1, a: 1}
-  colorCloud3: {r: 0.36862746, g: 0.4392157, b: 0.64705884, a: 1}
-  colorCloud4: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
-  planetUnder: {fileID: 6712188353046255564}
-  lakes: {fileID: 6712188353631335695}
-  clouds: {fileID: 6712188353941558388}

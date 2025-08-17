@@ -116,13 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58f02f22c534fe1a6f0d314a14882f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - propName: _Color1
-    color: {r: 0.6392157, g: 0.654902, b: 0.7607843, a: 1}
-  - propName: _Color2
-    color: {r: 0.29803923, g: 0.40784314, b: 0.52156866, a: 1}
-  - propName: _Color3
-    color: {r: 0.22745098, g: 0.24705882, b: 0.36862746, a: 1}
+  listData: {fileID: 11400000, guid: e0f99df4602334a45abda33fd2e862af, type: 2}
 --- !u!114 &1442356256055693825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,9 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79daf50018a44c682917e2239fc07e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list:
-  - propName: _Light_origin
-    value: {x: 0.7, y: 0.25, z: 0, w: 0}
+  listData: {fileID: 11400000, guid: eb266231f8ad1334eb0eeae9312a5c64, type: 2}
 --- !u!114 &121363138777481481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,15 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acb5c344ed484fdd8f35f8ac37ca5895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list:
-  - propName: _Pixels
-    value: 100
-  - propName: _Rotation
-    value: 0
-  - propName: _Size
-    value: 6.5
-  - propName: _OCTAVES
-    value: 3.45
+  listData: {fileID: 11400000, guid: a9bf48a907aa124499a2885143663e7e, type: 2}
 --- !u!1 &227750754771811153
 GameObject:
   m_ObjectHideFlags: 0

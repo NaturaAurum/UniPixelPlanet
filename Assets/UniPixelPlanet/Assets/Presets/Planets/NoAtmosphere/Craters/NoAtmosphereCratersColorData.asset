@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b70cfa3bbc54add92c69a2ee8e2d915, type: 3}
+  m_Name: NoAtmosphereCratersColorData
+  m_EditorClassIdentifier: 
+  data:
+  - propName: _Color1
+    value: {r: 0.29803923, g: 0.40784314, b: 0.52156866, a: 1}
+  - propName: _Color2
+    value: {r: 0.22745098, g: 0.24705882, b: 0.36862746, a: 1}
